@@ -1,0 +1,9 @@
+@mixin font-styling {
+  color: $red;
+}
+
+#app {
+  @include font-styling;
+}
+
+@use "./variables" as *;
