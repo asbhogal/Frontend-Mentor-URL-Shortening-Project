@@ -27,7 +27,7 @@ ul {
 
 @mixin flex-column {
 	display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
 	place-content: center center;
 	// Used column a lot might as well have a one-liner for it.
 }

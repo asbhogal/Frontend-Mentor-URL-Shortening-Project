@@ -132,7 +132,18 @@ body {
 }
 
 .company-stats-text {
-	margin-bottom: 3.5em;
+	// width: 50%;
+	margin: 0 auto 3.5em auto;
+	padding: 0 2em;
+
+	.company-stats-heading {
+		color: $very-dark-blue;
+	}
+	.company-stats-paragraph {
+		color: $grayish-violet;
+		line-height: 1.5;
+		margin-top: 1em;
+	}
 }
 
 .company-stats-blocks {
@@ -154,6 +165,17 @@ body {
 		margin-bottom: 0.5em;
 		line-height: 1.5;
 		background-color: $white;
+	}
+
+	h3 {
+		font-size: 1.4rem;
+		color: $very-dark-blue;
+	}
+
+	p {
+		color: $gray;
+		line-height: 1.5;
+		font-size: 1.125rem;
 	}
 
 	.block-item-icon {
@@ -220,7 +242,30 @@ footer {
 // Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
 
 @media screen and (min-width: 1000px) {
-	//
+	.header-main {
+		@include flex-default;
+		justify-content: space-between;
+		position: relative;
+
+		.nav-list {
+			@include flex-default;
+			position: absolute;
+			top: 0;
+			right: 120%;
+			transform: translateX(-120%);
+			// Who can tell I use this as a crutch. Kermit can...
+			background-color: transparent;
+			width: 30%;
+			border-radius: 0;
+			color: $grayish-violet;
+			font-weight: 700;
+			font-size: 1rem;
+		}
+	}
+
+	.hamburger-menu {
+		display: none;
+	}
 
 	.hero-container {
 		@include flex-default;
@@ -250,7 +295,13 @@ footer {
 		}
 	}
 
-	//
+	//Blocks and their associated people.
+
+	.company-stats-text {
+		width: 50%;
+		margin: 0 auto 3.5em auto;
+		padding: 0 2em;
+	}
 
 	.company-stats-blocks {
 		@include flex-default;
@@ -263,30 +314,22 @@ footer {
 			justify-content: space-evenly;
 			position: relative;
 			width: 33.333%;
-			height: 250px;
-			max-height: 250px;
+			height: 270px;
+			max-height: 270px;
+			// Question: above 1900px the stretchy width looks horrid. Is it an "okay" practice to add a fixed max-width here?
 			text-align: left;
 
-			&::before {
-				content: "";
-				border-top: 5px solid $cyan;
-				position: absolute;
-				top: 50%;
-				transform: translateX(-50deg);
-				left: 100%;
-				width: 100%;
-			}
+			// &::before {
+			// 	content: "";
+			// 	border-top: 5px solid $cyan;
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	transform: translateX(-50deg);
+			// 	left: 100%;
+			// 	width: 100%;
 
-			h3 {
-				font-size: 1.4rem;
-				color: $very-dark-blue;
-			}
-
-			p {
-				color: $gray;
-				line-height: 1.5;
-				font-size: 1.125rem;
-			}
+			// For the line-line effect between them, however on the last one it just runs on and I ...dont knoww how to fix, return to fix this. Maybe mid-psychosis will present a solution.
+			// }
 
 			&:nth-of-type(1) {
 				position: relative;
