@@ -85,23 +85,31 @@ body {
 // Shorten link container
 
 .link-shorten-container {
-  @include flex-column;
+  display: flex;
+  flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
+  gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
   background-color: $dark-violet;
   padding: 1.5em 0;
+  max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
+  width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
   width: 90%;
   margin: 0 auto;
   border-radius: 10px;
-
-  input {
-    margin: 0 0 1em 0;
+  > * {
+    display: inherit; // ensures all children inherit the flex display property from above
+  }
+  .link-input {
+    // changed to class name for clarity
+    flex: 1 1 auto;
     width: 80%;
     padding: 1em 0;
     text-indent: 10px;
     border-radius: 10px;
   }
 
-  button {
-    width: 80%;
+  .shorten-link-btn {
+    // changed to class name for clarity
+    flex: 1 5 auto;
     border-radius: 10px;
     @include flex-default;
     justify-content: center;
