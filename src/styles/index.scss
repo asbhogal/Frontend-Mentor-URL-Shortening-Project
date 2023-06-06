@@ -100,7 +100,7 @@ body {
   }
   .link-input {
     // changed to class name for clarity
-    flex: 1 1 auto;
+    flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
     width: 80%;
     padding: 1em 0;
     text-indent: 10px;
