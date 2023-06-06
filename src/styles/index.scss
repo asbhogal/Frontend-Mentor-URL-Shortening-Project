@@ -196,8 +196,7 @@ footer {
 	padding: 1em 0;
 
 	.footer-box-container {
-		@include flex-default;
-		flex-direction: column;
+		@include flex-column;
 		gap: 20px;
 		text-align: center;
 	}
@@ -269,6 +268,26 @@ footer {
 			top: -25px;
 			left: 10%;
 			transform: translateX(-10%);
+		}
+	}
+
+	// Footer
+
+	footer {
+		@include flex-default;
+		align-items: flex-start;
+		padding: 5em;
+
+		.footer-box-container {
+			@include flex-default;
+			align-items: flex-start;
+			justify-content: space-between;
+			width: 70%;
+			text-align: left;
+
+			.footer-box-link {
+				padding: 0.75em 0;
+			}
 		}
 	}
 }
