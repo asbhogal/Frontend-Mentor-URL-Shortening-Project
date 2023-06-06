@@ -6,15 +6,21 @@ $primary-font-family: "Poppins", sans-serif;
 // Font-face imports
 
 @font-face {
-	font-family: "Poppins - Medium";
-	src: url(public/fonts/Poppins-Medium.ttf);
+  font-family: "Poppins - Medium";
+  font-weight: 500;
+  font-style: normal;
+  src: url(public/fonts/Poppins-Medium.ttf);
+  font-display: swap;
 }
 
 @font-face {
-	font-family: "Poppins - Bold";
-	src: url(public/fonts/Poppins-Bold.ttf);
+  font-family: "Poppins - Bold";
+  font-weight: 700;
+  font-style: normal;
+  src: url(public/fonts/Poppins-Bold.ttf);
+  font-display: swap;
 }
 
 .heading-text {
-	font-size: 2.5rem;
+  font-size: 2.5rem;
 }
