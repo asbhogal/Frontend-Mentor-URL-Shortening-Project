@@ -4,8 +4,6 @@
 @use "./_partials/typography" as *;
 @use "./_partials/header" as *;
 
-// These are imports allowing for the extension of ALL styles/declarations in the partials imported above.
-
 // Add everything here, and then move things about, first get it to look normal-ish.
 
 * {
@@ -219,9 +217,41 @@ footer {
 	}
 }
 
-// Media Queries || Desktop Version
+// Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1000px) {
+	//
+
+	.hero-container {
+		@include flex-default;
+
+		.hero-image {
+			order: 1;
+		}
+
+		.hero-image,
+		.hero-text {
+			width: 100%;
+			@include flex-column;
+			padding: 1em 5em;
+
+			h1 {
+				font-size: 4rem;
+				text-align: left;
+				color: $very-dark-blue;
+			}
+
+			p {
+				color: $grayish-violet;
+				line-height: 1.5;
+				text-align: left;
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	//
+
 	.company-stats-blocks {
 		@include flex-default;
 		position: relative;
@@ -231,10 +261,21 @@ footer {
 		.block-item {
 			@include flex-column;
 			justify-content: space-evenly;
+			position: relative;
 			width: 33.333%;
 			height: 250px;
 			max-height: 250px;
 			text-align: left;
+
+			&::before {
+				content: "";
+				border-top: 5px solid $cyan;
+				position: absolute;
+				top: 50%;
+				transform: translateX(-50deg);
+				left: 100%;
+				width: 100%;
+			}
 
 			h3 {
 				font-size: 1.4rem;
