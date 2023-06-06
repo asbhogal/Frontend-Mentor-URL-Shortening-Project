@@ -1,6 +1,6 @@
 * {
 	border: 0;
-	// outline: 1px solid rebeccapurple;
+	outline: 1px solid rebeccapurple;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -20,8 +20,16 @@ ul {
 
 @mixin flex-default {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-flow: column wrap;
+	place-content: center center;
+	// Used column a lot might as well have a one-liner for it.
 }
 
 .bar {

@@ -1,8 +1,9 @@
+@use "./_partials/variables" as *;
 @use "./_partials/globals" as *;
 @use "./_partials/mixins" as *;
 @use "./_partials/typography" as *;
-@use "./_partials/variables" as *;
 @use "./_partials/header" as *;
+
 // These are imports allowing for the extension of ALL styles/declarations in the partials imported above.
 
 // Add everything here, and then move things about, first get it to look normal-ish.
@@ -13,23 +14,22 @@
 
 body {
 	background-color: rgb(234, 234, 227);
-}
-
-.app {
-	@include font-styling;
 	font-family: $primary-font-family;
 }
 
 .header-main {
 	@include flex-default;
-	padding: 0.5em;
+	max-height: 80px;
+	align-items: center;
 	justify-content: space-between;
 }
 
 .hamburger-menu {
-	@include flex-default;
-	flex-direction: column;
-	margin-right: -200px;
+	@include flex-column;
+	position: absolute;
+	top: 50%;
+	left: 85%;
+	transform: translateY(-50%);
 }
 
 .hidden {
@@ -87,8 +87,7 @@ body {
 // Shorten link container
 
 .link-shorten-container {
-	@include flex-default;
-	flex-direction: column;
+	@include flex-column;
 	background-color: $dark-violet;
 	padding: 1.5em 0;
 	width: 90%;
@@ -218,5 +217,58 @@ footer {
 	.social-list {
 		@include flex-default;
 		gap: 30px;
+	}
+}
+
+// Media Queries || Desktop Version
+
+@media screen and (min-width: 1400px) {
+	.company-stats-blocks {
+		@include flex-default;
+		position: relative;
+		gap: 40px;
+		padding: 0 5em;
+
+		.block-item {
+			@include flex-column;
+			justify-content: space-evenly;
+			width: 33.333%;
+			height: 250px;
+			max-height: 250px;
+			text-align: left;
+
+			h3 {
+				font-size: 1.4rem;
+				color: $very-dark-blue;
+			}
+
+			p {
+				color: $gray;
+				line-height: 1.5;
+				font-size: 1.125rem;
+			}
+
+			&:nth-of-type(1) {
+				position: relative;
+				top: -20px;
+			}
+
+			&:nth-of-type(3) {
+				position: relative;
+				top: 20px;
+			}
+		}
+
+		.block-item-icon {
+			background-color: $dark-violet;
+			padding: 1em;
+			border-radius: 50%;
+			display: block;
+			margin: 0 auto;
+			position: absolute;
+			top: -25px;
+			left: 10%;
+			transform: translateX(-10%);
+		}
 	}
 }

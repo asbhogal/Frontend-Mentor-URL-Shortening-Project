@@ -1,5 +1,11 @@
 .header-main {
-	padding: 0 0.75em;
+	position: relative;
+	padding: 1em;
+
+	img {
+		display: block;
+		height: 30px;
+	}
 }
 
 .nav-list {
