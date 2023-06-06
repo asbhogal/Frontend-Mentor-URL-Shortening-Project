@@ -9,7 +9,7 @@ $primary-font-family: "Poppins", sans-serif;
   font-family: "Poppins - Medium";
   font-weight: 500;
   font-style: normal;
-  src: url(public/fonts/Poppins-Medium.ttf);
+  src: url(public/fonts/Poppins-Medium.woff2), format(woff2);
   font-display: swap;
 }
 
@@ -17,7 +17,7 @@ $primary-font-family: "Poppins", sans-serif;
   font-family: "Poppins - Bold";
   font-weight: 700;
   font-style: normal;
-  src: url(public/fonts/Poppins-Bold.ttf);
+  src: url(public/fonts/Poppins-Bold.woff2), format(woff2);
   font-display: swap;
 }
 
