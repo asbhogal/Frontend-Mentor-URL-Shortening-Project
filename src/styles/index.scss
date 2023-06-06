@@ -89,7 +89,7 @@ body {
   flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
   gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
   background-color: $dark-violet;
-  padding: 1.5em 0;
+  padding: 1.5em;
   max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
   width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
   width: 90%;
