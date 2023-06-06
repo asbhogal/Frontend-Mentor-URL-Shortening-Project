@@ -1,13 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div class="app">This is some coffee</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortening | Frontend Mentor</title>
+</head>
+
+<body>
+
+  <!-- Navigation Header -->
+
+  <header class="header-main">
+    <div class="logo">
+      <img src="/logo.svg" alt="Shortly logo">
+    </div>
+    <div class="hamburger-menu">
+      <span class="bar">.</span>
+      <span class="bar">.</span>
+      <span class="bar">.</span>
+    </div>
+    <div class="nav-container">
+      <ul class="nav-list hidden">
+        <li class="nav-item">Nav Item 1</li>
+        <li class="nav-item">Nav Item 2</li>
+        <li class="nav-item">Nav Item 3</li>
+        <li class="nav-item">Nav Item 4</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero-container">
+    <section class="hero-text">
+      <h1 class="hero-text-heading">
+        More than just shorter links
+      </h1>
+      <p class="hero-text-paragraph">
+        Build your brand’s recognition and
+        get detailed insights on how your
+        links are performing.
+      </p>
+      <!-- Not sure if this should be a button or a link. Links go places/ buttons indicate behaviour...this should go somewhere, to a sign-up or sorts, not sure! -->
+      <a class="btn get-started-btn" href="#">
+        Get Started
+      </a>
+    </section>
+    <section class="hero-image">
+      <img src="/illustration-working.svg" alt="Person working illustration">
+    </section>
+  </section>
+
+  <section class="link-shorten-container">
+    <input type="text" class="link-input" placeholder="Shorten a link here">
+    <button class="btn shorten-link-btn">Shorten It!</button>
+  </section>
+
+  <section class="company-stats-container">
+    <section class="company-stats-text">
+      <h2 class="company-stats-heading">
+        Advanced Statistics
+      </h2>
+      <p class="company-stats-paragraph">
+        Track how your links are performing across the web with our advanced statistics dashboard.
+      </p>
+    </section>
+    <!-- Grid-ish blocks -->
+    <section class="company-stats-blocks">
+      <div class="block-item">
+        <img class="block-item-icon" src="/icon-brand-recognition.svg" alt="Brand recognition icon">
+        <h3>Brand Recognition</h3>
+        <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil
+          confidence in your content.</p>
+      </div>
+      <!--  -->
+      <div class="block-item">
+        <img class="block-item-icon" src="/icon-detailed-records.svg" alt="detailed records icon">
+        <h3>Detailed Records</h3>
+        <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps
+          inform better decisions.</p>
+      </div>
+      <!--  -->
+      <div class="block-item">
+        <img class="block-item-icon" src="/icon-detailed-records.svg" alt="detailed records icon">
+        <h3>Fully Customizable</h3>
+        <p>Improve brand awareness and content discoverability through customizable links, supercharging audience
+          engagement.</p>
+      </div>
+    </section>
+  </section>
+
+  <section class="boost-links-container">
+    <h2>Boost your links today</h2>
+    <a href="" class="btn get-started-btn">Get Started</a>
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+    <img class="footer-logo" src="/footer_logo.svg" alt="Footer logo">
+    <section class="footer-box-container">
+      <div class="footer-box">
+        <h4 class="footer-box-heading">Features</h4>
+        <ul class="footer-box-list">
+          <li class="footer-box-link">Link Shortening</li>
+          <li class="footer-box-link">Branded Links</li>
+          <li class="footer-box-link">Analytics</li>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="footer-box">
+        <h4 class="footer-box-heading">Resources</h4>
+        <ul class="footer-box-list">
+          <li class="footer-box-link">Blog</li>
+          <li class="footer-box-link">Developers</li>
+          <li class="footer-box-link">Support</li>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="footer-box">
+        <h4 class="footer-box-heading">Company</h4>
+        <ul class="footer-box-list">
+          <li class="footer-box-link">About</li>
+          <li class="footer-box-link">Our Team</li>
+          <li class="footer-box-link">Careers</li>
+          <li class="footer-box-link">Contact</li>
+        </ul>
+      </div>
+      <section class="footer-socials">
+        <ul class="social-list">
+          <li>
+            <img src="/public/icon-facebook.svg" alt="Facebook social media icon" class="social-icon">
+          </li>
+          <li>
+            <img src="/public/icon-twitter.svg" alt="Twitter social media icon" class=" social-icon">
+          </li>
+          <li>
+            <img src="/public/icon-pinterest.svg" alt="Pinterest social media icon" class="social-icon">
+          </li>
+          <li>
+            <img src="/public/icon-instagram.svg" alt="Instagram social media icon" class="social-icon">
+          </li>
+        </ul>
+      </section>
+    </section>
+
+  </footer>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

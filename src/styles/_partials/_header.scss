@@ -1,0 +1,18 @@
+.header-main {
+	padding: 0 0.75em;
+}
+
+.nav-list {
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	.nav-item {
+		margin-top: 0.5em;
+	}
+}
+
+// .nav-list {
+// 	display: none;
+// }
