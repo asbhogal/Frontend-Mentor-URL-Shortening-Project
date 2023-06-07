@@ -329,18 +329,6 @@ footer {
 			// Question: above 1900px the stretchy width looks horrid. Is it an "okay" practice to add a fixed max-width here?
 			text-align: left;
 
-			// &::before {
-			// 	content: "";
-			// 	border-top: 5px solid $cyan;
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	transform: translateX(-50deg);
-			// 	left: 100%;
-			// 	width: 100%;
-
-			// For the line-line effect between them, however on the last one it just runs on and I ...dont knoww how to fix, return to fix this. Maybe mid-psychosis will present a solution.
-			// }
-
 			&:nth-of-type(1) {
 				position: relative;
 				top: -20px;
@@ -363,6 +351,16 @@ footer {
 			left: 10%;
 			transform: translateX(-10%);
 		}
+	}
+
+	.tree-border::before {
+		content: "";
+		border-top: 6px solid $cyan;
+		position: absolute;
+		top: 50%;
+		transform: translateX(-50deg);
+		left: 100%;
+		width: 100%;
 	}
 
 	// Footer
