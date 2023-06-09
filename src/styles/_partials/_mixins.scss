@@ -1,9 +1,18 @@
 @use "./variables" as *;
 
 @mixin font-styling {
-  color: $cyan;
+	color: $cyan;
 }
 
-.app {
-  @include font-styling;
+@mixin default-list-style {
+	list-style-type: none;
+	padding-left: 0;
+
+	& > li {
+		line-height: 1.5;
+
+		& + ul {
+			list-style-type: none;
+		}
+	}
 }
