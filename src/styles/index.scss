@@ -45,13 +45,27 @@ body {
 
 .nav-list {
 	@include default-list-style;
-	background-color: $gray;
+	background-color: $dark-violet;
 	border-radius: 10px;
+	color: $white;
 	width: 85%;
 	padding: 0.5em 1em;
 	font-size: 1.15rem;
 	text-align: center;
 	font-family: $primary-font-family;
+
+	& > li,
+	.nav-item-m {
+		// I know you said that I should use classes for clarity, just testing this, will make it neater in a minute.
+		@include nav-list-link-spacing;
+	}
+}
+
+.nav-sign-up-btn {
+	@include btn;
+	border-radius: 50px;
+	padding: 0.2em 2em;
+	color: $white;
 }
 
 // Hero Section
@@ -71,7 +85,6 @@ body {
 
 	.hero-text * {
 		margin-top: 1em;
-		// I dont think I need to do this like this. Not sure. Please look this up after you're done here! Okay? Cool.
 	}
 
 	.hero-image {
@@ -95,15 +108,18 @@ body {
 	padding: 1.5em;
 	max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
 	width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
+	//Thanks. I will looking into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
 	width: 90%;
 	margin: 0 auto;
 	border-radius: 10px;
 	> * {
 		display: inherit; // ensures all children inherit the flex display property from above
+		//I never thought of this. thank you.
 	}
 	.link-input {
 		// changed to class name for clarity
 		flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
+		//thank you -- I will read more on it. I read the links provided. I need practice and more examples. Will do this soon.
 		width: 80%;
 		padding: 1em 0;
 		text-indent: 10px;
@@ -112,6 +128,7 @@ body {
 
 	.shorten-link-btn {
 		// changed to class name for clarity
+		// thank you. I will remember to use classes instead of selectors more.
 		flex: 1 5 auto;
 		border-radius: 10px;
 		@include flex-default;
