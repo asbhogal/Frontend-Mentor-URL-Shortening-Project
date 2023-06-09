@@ -81,6 +81,17 @@ body {
 		@include flex-default;
 		flex-direction: column;
 		padding: 1em;
+
+		.hero-text-heading {
+			color: $very-dark-blue;
+			font-size: 2.5rem;
+		}
+
+		.hero-text-paragraph {
+			color: $grayish-violet;
+			font-size: 1.125rem; //18px according to style-guide. Dont like it though.But, not a freaking designer am I... so. Alright folks.
+			line-height: 1.5;
+		}
 	}
 
 	.hero-text * {
@@ -166,11 +177,13 @@ body {
 
 	.company-stats-heading {
 		color: $very-dark-blue;
+		font-size: 1.75rem;
 	}
 	.company-stats-paragraph {
 		color: $grayish-violet;
 		line-height: 1.5;
 		margin-top: 1em;
+		font-size: 1.125rem;
 	}
 }
 
@@ -178,7 +191,6 @@ body {
 	@include flex-default;
 	flex-direction: column;
 	gap: 10px;
-	// background-color: $white;
 }
 
 .block-item {
@@ -205,6 +217,8 @@ body {
 		line-height: 1.5;
 		font-size: 1.125rem;
 	}
+
+	// Will change these based on your comments somewhere about using a class for clarity. <3.
 
 	.block-item-icon {
 		background-color: $dark-violet;
@@ -283,16 +297,28 @@ footer {
 		.nav-list {
 			@include flex-default;
 			position: absolute;
+			border: 2px solid pink;
 			top: 0;
 			right: 120%;
 			transform: translateX(-120%);
-			// Who can tell I use this as a crutch. Kermit can...
 			background-color: transparent;
 			width: 30%;
 			border-radius: 0;
 			color: $grayish-violet;
 			font-weight: 700;
 			font-size: 1rem;
+		}
+
+		.nav-list-secondary {
+			display: flex;
+			border: 2px solid red;
+			position: absolute;
+			left: 200%;
+
+			.nav-item-m {
+				border: 5px solid brown;
+				width: 10em;
+			}
 		}
 	}
 

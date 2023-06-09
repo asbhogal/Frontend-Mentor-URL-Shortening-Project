@@ -6,21 +6,22 @@ $primary-font-family: "Poppins", sans-serif;
 // Font-face imports
 
 @font-face {
-  font-family: "Poppins - Medium";
-  font-weight: 500;
-  font-style: normal;
-  src: url(public/fonts/Poppins-Medium.woff2), format(woff2);
-  font-display: swap;
+	font-family: "Poppins - Medium";
+	font-weight: 500;
+	font-style: normal;
+	src: url(public/fonts/Poppins-Medium.woff2), format(woff2);
+	font-display: swap;
+	// Thank you -- I will need to look up how to convert these myself and also I need to ask you why you added that swap for display. I dont know what it means, I will Google fu this of course. But in the event I am like a lost puppy.. (insert Inspector Clouseau voice) I'ma just ask.
 }
 
 @font-face {
-  font-family: "Poppins - Bold";
-  font-weight: 700;
-  font-style: normal;
-  src: url(public/fonts/Poppins-Bold.woff2), format(woff2);
-  font-display: swap;
+	font-family: "Poppins - Bold";
+	font-weight: 700;
+	font-style: normal;
+	src: url(public/fonts/Poppins-Bold.woff2), format(woff2);
+	font-display: swap;
 }
 
 .heading-text {
-  font-size: 2.5rem;
+	font-size: 2.5rem;
 }
