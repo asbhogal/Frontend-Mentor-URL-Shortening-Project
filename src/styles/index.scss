@@ -147,6 +147,27 @@ body {
 	}
 }
 
+// <div class="shortend-url">
+// <h2 class="url"></h2>
+// </div>
+
+.shortend-urls-container {
+	margin-top: 1em;
+}
+
+.shortend-url {
+	background-color: $white;
+	max-width: 850px;
+	margin: 0.75em auto;
+	border-radius: 10px;
+	padding: 0.5em 0;
+
+	.url {
+		color: $cyan;
+		text-align: center;
+	}
+}
+
 .btn {
 	@include btn;
 	background-color: $cyan;
@@ -311,12 +332,10 @@ footer {
 
 		.nav-list-secondary {
 			display: flex;
-			border: 2px solid red;
 			position: absolute;
-			left: 200%;
+			left: 185%;
 
 			.nav-item-m {
-				border: 5px solid brown;
 				width: 10em;
 			}
 		}
@@ -350,6 +369,10 @@ footer {
 				line-height: 1.5;
 				text-align: left;
 				font-size: 1.1rem;
+			}
+
+			a {
+				align-self: flex-start;
 			}
 		}
 	}
