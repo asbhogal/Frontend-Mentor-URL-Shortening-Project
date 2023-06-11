@@ -326,6 +326,12 @@ footer {
     @include flex-default;
     @include default-list-style;
     gap: 30px;
+    .social-list-icon {
+      @extend .social-list;
+      .social-list-icon-link {
+        display: flex;
+      }
+    }
   }
 
   .footer-box-list {
