@@ -149,18 +149,48 @@ body {
 
 .shortend-urls-container {
 	margin-top: 1em;
+	font-weight: 100;
+
+	& * {
+		font-weight: normal;
+	}
 }
 
 .shortend-url {
+	@include flex-column;
 	background-color: $white;
 	max-width: 850px;
+	width: 90%;
+	// added a width of 90% because I dont like the boxes touching on small screens.
 	margin: 0.75em auto;
 	border-radius: 10px;
 	padding: 0.5em 0;
+	text-align: center;
 
 	.url {
 		color: $cyan;
-		text-align: center;
+		padding-top: 0.3em;
+		border-top: 1px solid $gray;
+		margin: 0.2em 0;
+	}
+
+	.copy-btn {
+		@include flex-default;
+		border-radius: 10px;
+		width: 50%;
+		font-weight: 800;
+		font-size: 1.1rem;
+		align-self: center;
+		padding: 0.5em 1em;
+		justify-content: center;
+
+		&:is(:hover, :focus, :active) {
+			cursor: pointer;
+		}
+
+		.copied--confirm {
+			background-color: $very-dark-violet;
+		}
 	}
 }
 
@@ -369,6 +399,26 @@ footer {
 
 			a {
 				align-self: flex-start;
+			}
+		}
+	}
+
+	.shortend-url {
+		@include flex-default;
+		justify-content: space-evenly;
+
+		.url {
+			padding-top: 0;
+			border-top: none;
+		}
+
+		.copy-btn {
+			@include flex-default;
+			border-radius: 10px;
+			width: auto;
+
+			&:is(:hover, :focus, :active) {
+				cursor: pointer;
 			}
 		}
 	}
