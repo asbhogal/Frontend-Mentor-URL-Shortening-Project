@@ -317,7 +317,7 @@ footer {
 
   .footer-box-link {
     color: $gray;
-    letter-spacing: 1.1px;
+    /* letter-spacing: 1.1px; */
     padding: 0.2em 2em;
     font-size: 0.85rem;
   }
@@ -507,6 +507,14 @@ footer {
 
       .footer-box-link {
         padding: 0.75em 0;
+        a {
+          // chose not to add a class for the 'a' tag as 'footer-box-link' was used for the parent - we can change this down the line if need be but not essential at this point
+          text-decoration: none;
+          color: inherit;
+          &:hover {
+            color: $cyan;
+          }
+        }
       }
     }
   }
