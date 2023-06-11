@@ -7,497 +7,498 @@
 // Add everything here, and then move things about, first get it to look normal-ish.
 
 * {
-	font-family: $primary-font-family;
+  font-family: $primary-font-family;
 }
 
 body {
-	background-color: rgb(234, 234, 227);
-	font-family: $primary-font-family;
-	max-width: 1400px;
-	margin: 0 auto;
+  background-color: rgb(234, 234, 227);
+  font-family: $primary-font-family;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .header-main {
-	@include flex-default;
-	max-height: 80px;
-	align-items: center;
-	justify-content: space-between;
+  @include flex-default;
+  max-height: 80px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hamburger-menu {
-	@include flex-column;
-	position: absolute;
-	top: 50%;
-	left: 85%;
-	transform: translateY(-50%);
+  @include flex-column;
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%);
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .bar {
-	height: 3px;
-	margin-top: 5px;
-	width: 25px;
-	background: #222;
+  height: 3px;
+  margin-top: 5px;
+  width: 25px;
+  background: #222;
 }
 
 .nav-list {
-	@include default-list-style;
-	background-color: $dark-violet;
-	border-radius: 10px;
-	color: $white;
-	width: 85%;
-	padding: 0.5em 1em;
-	font-size: 1.15rem;
-	text-align: center;
-	font-family: $primary-font-family;
+  @include default-list-style;
+  background-color: $dark-violet;
+  border-radius: 10px;
+  color: $white;
+  width: 85%;
+  padding: 0.5em 1em;
+  font-size: 1.15rem;
+  text-align: center;
+  font-family: $primary-font-family;
 
-	& > li,
-	.nav-item-m {
-		// I know you said that I should use classes for clarity, just testing this, will make it neater in a minute.
-		@include nav-list-link-spacing;
-	}
+  & > li,
+  .nav-item-m {
+    // I know you said that I should use classes for clarity, just testing this, will make it neater in a minute.
+    @include nav-list-link-spacing;
+  }
 }
 
 .nav-sign-up-btn {
-	@include btn;
-	border-radius: 50px;
-	padding: 0.2em 2em;
-	color: $white;
+  @include btn;
+  border-radius: 50px;
+  padding: 0.2em 2em;
+  color: $white;
 }
 
 // Hero Section
 
 .hero-container {
-	@include flex-default;
-	flex-direction: column;
+  @include flex-default;
+  flex-direction: column;
 
-	.hero-image,
-	.hero-text {
-		width: 100%;
-		text-align: center;
-		@include flex-default;
-		flex-direction: column;
-		padding: 1em;
+  .hero-image,
+  .hero-text {
+    width: 100%;
+    text-align: center;
+    @include flex-default;
+    flex-direction: column;
+    padding: 1em;
 
-		.hero-text-heading {
-			color: $very-dark-blue;
-			font-size: 2.5rem;
-		}
+    .hero-text-heading {
+      color: $very-dark-blue;
+      font-size: 2.5rem;
+    }
 
-		.hero-text-paragraph {
-			color: $grayish-violet;
-			font-size: 1.125rem; //18px according to style-guide. Dont like it though.But, not a freaking designer am I... so. Alright folks.
-			line-height: 1.5;
-		}
-	}
+    .hero-text-paragraph {
+      color: $grayish-violet;
+      font-size: 1.125rem; //18px according to style-guide. Dont like it though.But, not a freaking designer am I... so. Alright folks.
+      line-height: 1.5;
+    }
+  }
 
-	.hero-text * {
-		margin-top: 1em;
-	}
+  .hero-text * {
+    margin-top: 1em;
+  }
 
-	.hero-image {
-		order: -1;
+  .hero-image {
+    order: -1;
 
-		img {
-			display: block;
-			margin: 1em auto;
-			max-width: 100%;
-		}
-	}
+    img {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+    }
+  }
 }
 
 // Shorten link container
 
 .link-shorten-container {
-	display: flex;
-	flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
-	gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
-	background-color: $dark-violet;
-	padding: 1.5em;
-	max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
-	width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
-	//Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
-	width: 90%;
-	margin: 0 auto;
-	border-radius: 10px;
-	> * {
-		display: inherit; // ensures all children inherit the flex display property from above
-		//I never thought of this. thank you.
-	}
-	.link-input {
-		// changed to class name for clarity
-		flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
-		//thank you -- I will read more on it. I read the links provided. I need practice and more examples. Will do this soon.
-		width: 80%;
-		padding: 1em 0;
-		text-indent: 10px;
-		border-radius: 10px;
-	}
+  display: flex;
+  flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
+  gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
+  background-color: $dark-violet;
+  padding: 1.5em;
+  max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
+  width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
+  //Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  > * {
+    display: inherit; // ensures all children inherit the flex display property from above
+    //I never thought of this. thank you.
+  }
+  .link-input {
+    // changed to class name for clarity
+    flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
+    //thank you -- I will read more on it. I read the links provided. I need practice and more examples. Will do this soon.
+    width: 80%;
+    padding: 1em 0;
+    text-indent: 10px;
+    border-radius: 10px;
+  }
 
-	.shorten-link-btn {
-		// changed to class name for clarity
-		// thank you. I will remember to use classes instead of selectors more.
-		flex: 1 5 auto;
-		border-radius: 10px;
-		@include flex-default;
-		justify-content: center;
-	}
+  .shorten-link-btn {
+    // changed to class name for clarity
+    // thank you. I will remember to use classes instead of selectors more.
+    flex: 1 5 auto;
+    border-radius: 10px;
+    @include flex-default;
+    justify-content: center;
+  }
 }
 
 .shortend-urls-container {
-	margin-top: 1em;
-	font-weight: 100;
+  margin-top: 1em;
+  font-weight: 100;
 
-	& * {
-		font-weight: normal;
-	}
+  & * {
+    font-weight: normal;
+  }
 }
 
 .shortend-url {
-	@include flex-column;
-	background-color: $white;
-	max-width: 850px;
-	width: 90%;
-	// added a width of 90% because I dont like the boxes touching on small screens.
-	margin: 0.75em auto;
-	border-radius: 10px;
-	padding: 0.5em 0;
-	text-align: center;
+  @include flex-column;
+  background-color: $white;
+  max-width: 850px;
+  width: 90%;
+  // added a width of 90% because I dont like the boxes touching on small screens.
+  margin: 0.75em auto;
+  border-radius: 10px;
+  padding: 0.5em 0;
+  text-align: center;
 
-	.url {
-		color: $cyan;
-		padding-top: 0.3em;
-		border-top: 1px solid $gray;
-		margin: 0.2em 0;
-	}
+  .url {
+    color: $cyan;
+    padding-top: 0.3em;
+    border-top: 1px solid $gray;
+    margin: 0.2em 0;
+  }
 
-	.copy-btn {
-		@include flex-default;
-		border-radius: 10px;
-		width: 50%;
-		font-weight: 800;
-		font-size: 1.1rem;
-		align-self: center;
-		padding: 0.5em 1em;
-		justify-content: center;
+  .copy-btn {
+    @include flex-default;
+    border-radius: 10px;
+    width: 50%;
+    font-weight: 800;
+    font-size: 1.1rem;
+    align-self: center;
+    padding: 0.5em 1em;
+    justify-content: center;
 
-		&:is(:hover, :focus, :active) {
-			cursor: pointer;
-		}
+    &:is(:hover, :focus, :active) {
+      cursor: pointer;
+    }
 
-		.copied--confirm {
-			background-color: $very-dark-violet;
-		}
-	}
+    .copied--confirm {
+      background-color: $very-dark-violet;
+    }
+  }
 }
 
 .btn {
-	@include btn;
-	background-color: $cyan;
-	color: $white;
+  @include btn;
+  background-color: $cyan;
+  color: $white;
 }
 
 .shorten-link-btn {
-	border-radius: 50px;
-	font-family: $primary-font-family;
+  border-radius: 50px;
+  font-family: $primary-font-family;
 }
 
 .get-started-btn {
-	border-radius: 50px;
-	text-decoration: none;
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 // Blocks with content
 
 .company-stats-container {
-	text-align: center;
-	padding: 2em 0;
+  text-align: center;
+  padding: 2em 0;
 }
 
 .company-stats-text {
-	// width: 50%;
-	margin: 0 auto 3.5em auto;
-	padding: 0 2em;
+  // width: 50%;
+  margin: 0 auto 3.5em auto;
+  padding: 0 2em;
 
-	.company-stats-heading {
-		color: $very-dark-blue;
-		font-size: 1.75rem;
-	}
-	.company-stats-paragraph {
-		color: $grayish-violet;
-		line-height: 1.5;
-		margin-top: 1em;
-		font-size: 1.125rem;
-	}
+  .company-stats-heading {
+    color: $very-dark-blue;
+    font-size: 1.75rem;
+  }
+  .company-stats-paragraph {
+    color: $grayish-violet;
+    line-height: 1.5;
+    margin-top: 1em;
+    font-size: 1.125rem;
+  }
 }
 
 .company-stats-blocks {
-	@include flex-default;
-	flex-direction: column;
-	gap: 10px;
+  @include flex-default;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .block-item {
-	background-color: $white;
-	width: 90%;
-	padding: 4em 1em 0.5em 1em;
-	margin: 1em auto;
-	position: relative;
+  background-color: $white;
+  width: 90%;
+  padding: 4em 1em 0.5em 1em;
+  margin: 1em auto;
+  position: relative;
 
-	h3,
-	p {
-		margin-bottom: 0.5em;
-		line-height: 1.5;
-		background-color: $white;
-	}
+  h3,
+  p {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+    background-color: $white;
+  }
 
-	h3 {
-		font-size: 1.4rem;
-		color: $very-dark-blue;
-	}
+  h3 {
+    font-size: 1.4rem;
+    color: $very-dark-blue;
+  }
 
-	p {
-		color: $gray;
-		line-height: 1.5;
-		font-size: 1.125rem;
-	}
+  p {
+    color: $gray;
+    line-height: 1.5;
+    font-size: 1.125rem;
+  }
 
-	// Will change these based on your comments somewhere about using a class for clarity. <3.
+  // Will change these based on your comments somewhere about using a class for clarity. <3.
 
-	.block-item-icon {
-		background-color: $dark-violet;
-		padding: 1em;
-		border-radius: 50%;
-		display: block;
-		margin: 0 auto;
-		position: absolute;
-		top: -25px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
+  .block-item-icon {
+    background-color: $dark-violet;
+    padding: 1em;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 // Boost container
 
 .boost-links-container {
-	@include flex-default;
-	flex-direction: column;
-	color: $white;
-	background-color: $dark-violet;
-	padding: 1em 0 2em 0;
+  @include flex-default;
+  flex-direction: column;
+  color: $white;
+  background-color: $dark-violet;
+  padding: 1em 0 2em 0;
 
-	h2 {
-		margin: 1em 0;
-	}
+  h2 {
+    margin: 1em 0;
+  }
 }
 
 // Footer section and then go get a cup of tea to calm yourself....
 
 footer {
-	@include flex-default;
-	flex-direction: column;
-	background-color: $very-dark-violet;
-	color: $white;
-	gap: 20px;
-	padding: 1em 0;
+  @include flex-default;
+  flex-direction: column;
+  background-color: $very-dark-violet;
+  color: $white;
+  gap: 20px;
+  padding: 1em 0;
 
-	.footer-box-container {
-		@include flex-column;
-		gap: 20px;
-		text-align: center;
-	}
+  .footer-box-container {
+    @include flex-column;
+    gap: 20px;
+    text-align: center;
+  }
 
-	.footer-box-heading {
-		margin-bottom: 0.5em;
-		letter-spacing: 1.1px;
-	}
+  .footer-box-heading {
+    margin-bottom: 0.5em;
+    letter-spacing: 1.1px;
+  }
 
-	.footer-box-link {
-		color: $gray;
-		letter-spacing: 1.1px;
-		padding: 0.2em 2em;
-		font-size: 0.85rem;
-	}
+  .footer-box-link {
+    color: $gray;
+    letter-spacing: 1.1px;
+    padding: 0.2em 2em;
+    font-size: 0.85rem;
+  }
 
-	.social-list {
-		@include flex-default;
-		@include default-list-style;
-		gap: 30px;
-	}
+  .social-list {
+    @include flex-default;
+    @include default-list-style;
+    gap: 30px;
+  }
 
-	.footer-box-list {
-		@include default-list-style;
-	}
+  .footer-box-list {
+    @include default-list-style;
+  }
 }
 
 // Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
 
 @media screen and (min-width: 1000px) {
-	.header-main {
-		@include flex-default;
-		justify-content: space-between;
-		position: relative;
+  .header-main {
+    @include flex-default;
+    justify-content: space-between;
+    position: relative;
 
-		.nav-list {
-			@include flex-default;
-			position: absolute;
-			border: 2px solid pink;
-			top: 0;
-			right: 120%;
-			transform: translateX(-120%);
-			background-color: transparent;
-			width: 30%;
-			border-radius: 0;
-			color: $grayish-violet;
-			font-weight: 700;
-			font-size: 1rem;
-		}
+    .nav-list {
+      @include flex-default;
+      position: absolute;
+      border: 2px solid pink;
+      top: 0;
+      right: 120%;
+      transform: translateX(-120%);
+      background-color: transparent;
+      width: 30%;
+      border-radius: 0;
+      color: $grayish-violet;
+      font-weight: 700;
+      font-size: 1rem;
+    }
 
-		.nav-list-secondary {
-			display: flex;
-			position: absolute;
-			left: 185%;
+    .nav-list-secondary {
+      display: flex;
+      position: absolute;
+      left: 185%;
 
-			.nav-item-m {
-				width: 10em;
-			}
-		}
-	}
+      .nav-item-m {
+        width: 10em;
+      }
+    }
+  }
 
-	.hamburger-menu {
-		display: none;
-	}
+  .hamburger-menu {
+    display: none;
+  }
 
-	.hero-container {
-		@include flex-default;
+  .hero-container {
+    @include flex-default;
 
-		.hero-image {
-			order: 1;
-		}
+    .hero-image {
+      order: 1;
+    }
 
-		.hero-image,
-		.hero-text {
-			width: 100%;
-			@include flex-column;
-			padding: 1em 5em;
+    .hero-image,
+    .hero-text {
+      width: 100%;
+      @include flex-column;
+      padding: 1em 5em;
 
-			h1 {
-				font-size: 4rem;
-				text-align: left;
-				color: $very-dark-blue;
-			}
+      h1 {
+        font-size: 4rem;
+        text-align: left;
+        color: $very-dark-blue;
+      }
 
-			p {
-				color: $grayish-violet;
-				line-height: 1.5;
-				text-align: left;
-				font-size: 1.1rem;
-			}
+      p {
+        color: $grayish-violet;
+        line-height: 1.5;
+        text-align: left;
+        font-size: 1.1rem;
+      }
 
-			a {
-				align-self: flex-start;
-			}
-		}
-	}
+      a {
+        align-self: flex-start;
+      }
+    }
+  }
 
-	.shortend-url {
-		@include flex-default;
-		justify-content: space-evenly;
+  .shortend-url {
+    @include flex-default;
+    justify-content: space-evenly;
 
-		.url {
-			padding-top: 0;
-			border-top: none;
-		}
+    .url {
+      padding-top: 0;
+      border-top: none;
+    }
 
-		.copy-btn {
-			@include flex-default;
-			border-radius: 10px;
-			width: auto;
+    .copy-btn {
+      @include flex-default;
+      border-radius: 10px;
+      width: auto;
 
-			&:is(:hover, :focus, :active) {
-				cursor: pointer;
-			}
-		}
-	}
+      &:is(:hover, :focus, :active) {
+        cursor: pointer;
+      }
+    }
+  }
 
-	//Blocks and their associated people.
+  //Blocks and their associated people.
 
-	.company-stats-text {
-		width: 50%;
-		margin: 0 auto 3.5em auto;
-		padding: 0 2em;
-	}
+  .company-stats-text {
+    width: 50%;
+    margin: 0 auto 3.5em auto;
+    padding: 0 2em;
+  }
 
-	.company-stats-blocks {
-		@include flex-default;
-		position: relative;
-		gap: 40px;
-		padding: 0 5em;
+  .company-stats-blocks {
+    @include flex-default;
+    position: relative;
+    gap: 40px;
+    padding: 0 5em;
 
-		.block-item {
-			@include flex-column;
-			justify-content: space-evenly;
-			position: relative;
-			width: 33.333%;
-			height: 270px;
-			max-height: 270px;
-			// Question: above 1900px the stretchy width looks horrid. Is it an "okay" practice to add a fixed max-width here?
-			text-align: left;
+    .block-item {
+      @include flex-column;
+      justify-content: space-evenly;
+      position: relative;
+      width: 33.333%;
+      height: 270px;
+      max-height: 270px;
+      // Question: above 1900px the stretchy width looks horrid. Is it an "okay" practice to add a fixed max-width here?
+      // Answer: content looks okay I think for 1900+px. a fixed max-width with a width of 100% and margin: 0 auto is what I'd go for. Also, you can remove the max-height, as the height has already been explicitly set, which itself sets the maximum height. max-height would be useful if we wanted the height of the elements to be flexible up to a certain max height.
+      text-align: left;
 
-			&:nth-of-type(1) {
-				position: relative;
-				top: -20px;
-			}
+      &:nth-of-type(1) {
+        position: relative;
+        top: -20px;
+      }
 
-			&:nth-of-type(3) {
-				position: relative;
-				top: 20px;
-			}
-		}
+      &:nth-of-type(3) {
+        position: relative;
+        top: 20px;
+      }
+    }
 
-		.block-item-icon {
-			background-color: $dark-violet;
-			padding: 1em;
-			border-radius: 50%;
-			display: block;
-			margin: 0 auto;
-			position: absolute;
-			top: -25px;
-			left: 10%;
-			transform: translateX(-10%);
-		}
-	}
+    .block-item-icon {
+      background-color: $dark-violet;
+      padding: 1em;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      top: -25px;
+      left: 10%;
+      transform: translateX(-10%);
+    }
+  }
 
-	.tree-border::before {
-		content: "";
-		border-top: 6px solid $cyan;
-		position: absolute;
-		top: 50%;
-		transform: translateX(-50deg);
-		left: 100%;
-		width: 100%;
-	}
+  .tree-border::before {
+    content: "";
+    border-top: 6px solid $cyan;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50deg);
+    left: 100%;
+    width: 100%;
+  }
 
-	// Footer
+  // Footer
 
-	footer {
-		@include flex-default;
-		align-items: flex-start;
-		padding: 5em;
+  footer {
+    @include flex-default;
+    align-items: flex-start;
+    padding: 5em;
 
-		.footer-box-container {
-			@include flex-default;
-			align-items: flex-start;
-			justify-content: space-between;
-			width: 70%;
-			text-align: left;
+    .footer-box-container {
+      @include flex-default;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 70%;
+      text-align: left;
 
-			.footer-box-link {
-				padding: 0.75em 0;
-			}
-		}
-	}
+      .footer-box-link {
+        padding: 0.75em 0;
+      }
+    }
+  }
 }
