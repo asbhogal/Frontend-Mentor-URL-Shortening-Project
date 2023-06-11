@@ -330,6 +330,9 @@ footer {
       @extend .social-list;
       .social-list-icon-link {
         display: flex;
+        svg path:hover {
+          fill: $cyan; // in order to be able to change the fill of the svgs, I've replaced the img elements with their respective SVG path values. These are found by clicking on the svg file in VS Code, and copying and pasting it into the HTML.
+        }
       }
     }
   }
