@@ -3,6 +3,8 @@
 @use "./variables" as *;
 @use "../_components/header" as *;
 
+// Urm, I didn't dream this one. :/ dont know what is happening here. Goodbye world.
+
 * {
 	margin: 0;
 	padding: 0;
@@ -37,4 +39,9 @@
 	text-decoration: none;
 	background-color: $cyan;
 	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: $gray;
 }
