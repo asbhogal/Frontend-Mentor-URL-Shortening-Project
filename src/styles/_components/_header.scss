@@ -1,6 +1,9 @@
 .header-main {
 	position: relative;
 	padding: 1em;
+	max-height: 80px;
+	align-items: center;
+	justify-content: space-between;
 
 	img {
 		display: block;
@@ -8,11 +11,30 @@
 	}
 }
 
+.hamburger-menu {
+	position: absolute;
+	top: 50%;
+	left: 85%;
+	transform: translateY(-50%);
+}
+
+.hidden {
+	display: none;
+}
+
 .nav-list {
 	position: absolute;
 	top: 60px;
 	left: 50%;
 	transform: translateX(-50%);
+	//
+
+	border-radius: 10px;
+	width: 85%;
+	padding: 0.5em 1em;
+	font-size: 1.15rem;
+	text-align: center;
+	//
 
 	.nav-item {
 		margin-top: 0.5em;

@@ -21,21 +21,11 @@ body {
 
 .header-main {
 	@include flex-default;
-	max-height: 80px;
-	align-items: center;
-	justify-content: space-between;
+	background-color: $white;
 }
 
 .hamburger-menu {
 	@include flex-column;
-	position: absolute;
-	top: 50%;
-	left: 85%;
-	transform: translateY(-50%);
-}
-
-.hidden {
-	display: none;
 }
 
 .bar {
@@ -48,17 +38,12 @@ body {
 .nav-list {
 	@include default-list-style;
 	background-color: $dark-violet;
-	border-radius: 10px;
+	user-select: none;
 	color: $white;
-	width: 85%;
-	padding: 0.5em 1em;
-	font-size: 1.15rem;
-	text-align: center;
 	font-family: $primary-font-family;
 
 	& > li,
 	.nav-item-m {
-		// I know you said that I should use classes for clarity, just testing this, will make it neater in a minute.
 		@include nav-list-link-spacing;
 	}
 }
@@ -75,6 +60,8 @@ body {
 .hero-container {
 	@include flex-default;
 	flex-direction: column;
+	background-color: $white;
+	padding-bottom: 5em;
 
 	.hero-image,
 	.hero-text {
@@ -353,7 +340,6 @@ footer {
 		.nav-list {
 			@include flex-default;
 			position: absolute;
-			border: 2px solid pink;
 			top: 0;
 			right: 120%;
 			transform: translateX(-120%);
