@@ -189,10 +189,6 @@ body {
 		&:is(:hover, :focus, :active) {
 			cursor: pointer;
 		}
-
-		.copied--confirm {
-			background-color: $very-dark-violet;
-		}
 	}
 }
 

@@ -42,10 +42,9 @@ async function callAPI() {
 	document.querySelector(".link-input").value = "";
 }
 
-// Clipboard API
-
 shortenLinkBtn.addEventListener("click", callAPI);
 
+/// Clipboard API
 // Text copying.
 const urlBoxContainer = document.querySelector(".shortend-urls-container");
 
@@ -59,7 +58,7 @@ urlBoxContainer.addEventListener("click", (event) => {
 			.then(() => {
 				// Temp styling and changed on copy, its 6-am and my brain is just not having this "sleep deprivation" anymore. But, I am happy it works. Will work on it more.
 				clicked.innerText = "Copied";
-				clicked.style.backgroundColor = "purple";
+				clicked.style.backgroundColor = "#3b3054";
 			})
 			.catch((err) => {
 				console.error(`Error copying text to clipboard: ${err}`);
