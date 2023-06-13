@@ -379,21 +379,24 @@ footer {
 			@include flex-column;
 			padding: 1em 5em;
 
-			h1 {
-				font-size: 4rem;
+			.hero-text-heading {
+				font-size: 3rem;
 				text-align: left;
+				line-height: 1.2;
 				color: $very-dark-blue;
 			}
 
-			p {
+			.hero-text-paragraph {
 				color: $grayish-violet;
 				line-height: 1.5;
 				text-align: left;
-				font-size: 1.1rem;
+				font-size: 1.3rem;
 			}
 
 			a {
 				align-self: flex-start;
+				margin-top: 1.5em;
+				padding: 0.75em 2em;
 			}
 		}
 	}
