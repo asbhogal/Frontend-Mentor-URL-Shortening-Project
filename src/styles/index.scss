@@ -152,8 +152,10 @@ body {
 .shortend-urls-container {
 	margin-top: 1em;
 	font-weight: 100;
-
-	& * {
+	// So the newest is the first in the list.
+	display: flex;
+	flex-direction: column-reverse;
+	x & * {
 		font-weight: normal;
 	}
 }
@@ -285,7 +287,7 @@ body {
 	flex-direction: column;
 	color: $white;
 	background-color: $dark-violet;
-	padding: 1em 0 2em 0;
+	// padding: 1em 0 2em 0;
 
 	h2 {
 		margin: 1em 0;
