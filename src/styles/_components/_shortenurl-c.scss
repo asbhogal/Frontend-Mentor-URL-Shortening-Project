@@ -4,16 +4,18 @@
 	background-position: top right;
 	position: absolute;
 	//
-	right: 5%;
-	transform: translateX(-5%);
+	left: 0;
+	right: 0;
 	transform: translateY(-50%);
 
 	// Oh-----it worked. Keywords op. Math, who? Never really got along with her.
 
 	@media screen and (min-width: 1000px) {
-		right: 20%;
-		transform: translateX(-20%);
-		// Eh ? Does it work? Is this normal?
+		// transform: translateX(-15%);
+		left: 0;
+		right: 0;
+		//lmao ---- all this time, wow Kay, wow!
+		// Eh ? Does it work? Is this normal? -- comment from 1hr ago, to remind yourself of your silliness, think.
 		transform: translateY(-50%);
 		//
 		background-image: url(/public/bg-shorten-desktop.svg);
