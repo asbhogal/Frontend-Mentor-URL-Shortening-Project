@@ -1,13 +1,6 @@
-// @use "./_partials/variables" as *;
-// @use "./_partials/globals" as *;
-// @use "./_partials/mixins" as *;
-// @use "./_partials/typography" as *;
-// @use "./_components/header" as *;
-
 @use "./_partials/" as *;
 @use "./_components/" as *;
 
-// Add everything here, and then move things about, first get it to look normal-ish.
 * {
 	font-family: $primary-font-family;
 }
@@ -78,7 +71,7 @@ body {
 
 		.hero-text-paragraph {
 			color: $grayish-violet;
-			font-size: 1.125rem; //18px according to style-guide. Dont like it though.But, not a freaking designer am I... so. Alright folks.
+			font-size: 1.125rem;
 			line-height: 1.5;
 		}
 	}
@@ -170,7 +163,7 @@ body {
 		border-radius: 10px;
 		width: 50%;
 		font-weight: 800;
-		font-size: 1.1rem;
+		font-size: 1.125rem;
 		align-self: center;
 		padding: 0.5em 1em;
 		justify-content: center;
