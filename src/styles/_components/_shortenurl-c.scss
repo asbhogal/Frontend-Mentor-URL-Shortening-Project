@@ -6,6 +6,7 @@
 	//
 	left: 0;
 	right: 0;
+	transform: translateX(-0%);
 	transform: translateY(-50%);
 
 	// Oh-----it worked. Keywords op. Math, who? Never really got along with her.
@@ -17,6 +18,9 @@
 		//lmao ---- all this time, wow Kay, wow!
 		// Eh ? Does it work? Is this normal? -- comment from 1hr ago, to remind yourself of your silliness, think.
 		transform: translateY(-50%);
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
 		//
 		background-image: url(/public/bg-shorten-desktop.svg);
 		height: 12ch;
