@@ -103,7 +103,7 @@ body {
 	width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
 	//Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
 	width: 90%;
-	margin: 0 auto;
+	margin: 0 auto 0 auto;
 	border-radius: 10px;
 	> * {
 		display: inherit; // ensures all children inherit the flex display property from above
@@ -130,7 +130,7 @@ body {
 }
 
 .shortend-urls-container {
-	margin-top: 1em;
+	margin-top: 5em;
 	font-weight: 100;
 	// So the newest is the first in the list.
 	display: flex;

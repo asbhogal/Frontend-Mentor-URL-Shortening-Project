@@ -2,9 +2,20 @@
 	background-image: url(/public/bg-shorten-mobile.svg);
 	background-repeat: no-repeat;
 	background-position: top right;
+	position: absolute;
+	//
+	right: 5%;
+	transform: translateX(-5%);
+	transform: translateY(-50%);
+
 	// Oh-----it worked. Keywords op. Math, who? Never really got along with her.
 
 	@media screen and (min-width: 1000px) {
+		right: 20%;
+		transform: translateX(-20%);
+		// Eh ? Does it work? Is this normal?
+		transform: translateY(-50%);
+		//
 		background-image: url(/public/bg-shorten-desktop.svg);
 		height: 12ch;
 		background-position: top center;
