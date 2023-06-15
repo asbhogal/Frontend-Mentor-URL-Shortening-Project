@@ -16,30 +16,59 @@ hamburgerMenu.addEventListener("click", function () {
 // The API.
 
 async function callAPI() {
-	const inputURL = document.querySelector(".link-input").value;
+	const inputURL = document.querySelector("#url-input").value;
 	const container = document.querySelector(".shortend-urls-container");
-	try {
-		const response = await fetch(
-			`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
-		);
-		const data = await response.json();
-		const urlLink = data.result.short_link;
 
-		container.innerHTML += `
-		<div class="shortend-url">
-			<h2 class="input">${inputURL}</h2>
-			<h2 class="url">${urlLink}</h2>
-			<button class="btn copy-btn"> 
-			Copy It 
-			</button>
-		</div>
-			`;
-	} catch (err) {
-		err = "Sorry, not sure what happened there!";
-		console.log(err);
+	// Start testing
+	if (isValidHttpUrl(inputURL)) {
+		try {
+			const response = await fetch(
+				`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
+			);
+			const data = await response.json();
+			const urlLink = data.result.short_link;
+
+			container.innerHTML += `
+			<div class="shortend-url">
+				<h2 class="input">${inputURL}</h2>
+				<h2 class="url">${urlLink}</h2>
+				<button class="btn copy-btn"> 
+				Copy It 
+				</button>
+			</div>
+				`;
+		} catch (err) {
+			err = "Sorry, not sure what happened there!";
+			console.log(err);
+		}
+	} else {
+		console.log("Well, not?");
 	}
+	// end testing
+
+	// try {
+	// 	const response = await fetch(
+	// 		`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
+	// 	);
+	// 	const data = await response.json();
+	// 	const urlLink = data.result.short_link;
+
+	// 	container.innerHTML += `
+	// 	<div class="shortend-url">
+	// 		<h2 class="input">${inputURL}</h2>
+	// 		<h2 class="url">${urlLink}</h2>
+	// 		<button class="btn copy-btn">
+	// 		Copy It
+	// 		</button>
+	// 	</div>
+	// 		`;
+	// } catch (err) {
+	// 	err = "Sorry, not sure what happened there!";
+	// 	console.log(err);
+	// }
+
 	// Clear the input box
-	document.querySelector(".link-input").value = "";
+	document.querySelector("#url-input").value = "";
 }
 
 shortenLinkBtn.addEventListener("click", callAPI);
@@ -65,3 +94,17 @@ urlBoxContainer.addEventListener("click", (event) => {
 			});
 	}
 });
+
+// const isAbsoluteUrl = url => /^[a-z][a-z0-9+.-]*:/.test(url);
+
+function isValidHttpUrl(string) {
+	let url;
+
+	try {
+		url = new URL(string);
+	} catch (_) {
+		return false;
+	}
+
+	return url.protocol === "http:" || url.protocol === "https:";
+}
