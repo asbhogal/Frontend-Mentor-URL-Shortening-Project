@@ -1,8 +1,11 @@
 import "./src/styles/index.scss";
 
+// Global variables
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const shortenLinkBtn = document.querySelector(".shorten-link-btn");
 
+// Event listeners
+shortenLinkBtn.addEventListener("click", callAPI);
 hamburgerMenu.addEventListener("click", function () {
 	console.log("clicked");
 	const navList = document.querySelector(".nav-list");
@@ -14,7 +17,6 @@ hamburgerMenu.addEventListener("click", function () {
 });
 
 // The API.
-
 async function callAPI() {
 	const inputURL = document.querySelector("#url-input").value;
 	const container = document.querySelector(".shortend-urls-container");
@@ -49,8 +51,6 @@ async function callAPI() {
 	// Clear the input box
 	document.querySelector("#url-input").value = "";
 }
-
-shortenLinkBtn.addEventListener("click", callAPI);
 
 /// Clipboard API
 // Text copying.
@@ -87,3 +87,5 @@ function checkURL(string) {
 
 	return url.protocol === "http:" || url.protocol === "https:";
 }
+
+//
