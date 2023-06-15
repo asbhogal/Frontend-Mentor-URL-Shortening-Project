@@ -8,6 +8,7 @@ $very-dark-blue: #35323e;
 $very-dark-violet: #232127;
 $white: #fff;
 
-// $primary-fontSize: 18px; //dont think this is such a good idea. not scalable? also might not belong here.
+// $primary-fontSize: 18px; //dont think this is such a good idea. not scalable? also might not belong here. -  This has been resolved with the clamp() function now right? Wanted to leave this here just to be sure. Otherwise if it has, we can remove this.
 
 $primary-font-family: "Poppins", sans-serif;
+// This variable has been moved here to keep all SCSS variables together
