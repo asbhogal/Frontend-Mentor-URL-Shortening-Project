@@ -20,7 +20,7 @@ async function callAPI() {
 	const container = document.querySelector(".shortend-urls-container");
 
 	// Start testing
-	if (isValidHttpUrl(inputURL)) {
+	if (checkURL(inputURL)) {
 		try {
 			const response = await fetch(
 				`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
@@ -95,9 +95,7 @@ urlBoxContainer.addEventListener("click", (event) => {
 	}
 });
 
-// const isAbsoluteUrl = url => /^[a-z][a-z0-9+.-]*:/.test(url);
-
-function isValidHttpUrl(string) {
+function checkURL(string) {
 	let url;
 
 	try {
