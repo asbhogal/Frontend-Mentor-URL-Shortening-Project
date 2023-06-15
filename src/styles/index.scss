@@ -63,6 +63,7 @@ body {
 		@include flex-default;
 		flex-direction: column;
 		padding: 1em;
+		margin-bottom: 2em;
 
 		.hero-text-heading {
 			color: $very-dark-blue;
@@ -130,7 +131,7 @@ body {
 }
 
 .shortend-urls-container {
-	margin-top: 5em;
+	margin-top: 6em;
 	font-weight: 100;
 	// So the newest is the first in the list.
 	display: flex;

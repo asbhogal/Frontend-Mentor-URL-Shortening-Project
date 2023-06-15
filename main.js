@@ -43,10 +43,6 @@ async function callAPI() {
 		}
 	} else {
 		console.log("Well, not?");
-		// const err = document.createElement("span");
-		// err.innerText = "Please enter a valid URL";
-		// document.querySelector("#url-input-label").appendChild(err);
-		// Not right yet... thinking more.
 	}
 
 	// Clear the input box
