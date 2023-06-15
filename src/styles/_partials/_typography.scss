@@ -9,7 +9,7 @@
 /**** POPPINS - 500 MEDIUM ****/
 
 @font-face {
-  font-family: "Poppins"; // changed this to just 'Poppins', weights can then be designated. This also matches the value for the $primary-font-family variable
+  font-family: "Poppins"; // changed this to just 'Poppins', weights can then be designated when using them on certain text classes, where it isn't normally set by default, e.g. a heading h2 will apply the bold without needing to specify the font-weight etc. This also matches the value for the $primary-font-family variable
   font-weight: 500;
   font-style: normal;
   src: url(/fonts/Poppins-Medium.woff2) format(woff2);
@@ -22,7 +22,7 @@
 /**** POPPINS - 700 BOLD ****/
 
 @font-face {
-  font-family: "Poppins";
+  font-family: "Poppins"; // changed this to just 'Poppins', weights can then be designated when using them on certain text classes, where it isn't normally set by default, e.g. a heading h2 will apply the bold without needing to specify the font-weight etc. This also matches the value for the $primary-font-family variable
   font-weight: 700;
   font-style: normal;
   src: url(/fonts/Poppins-Bold.woff2) format(woff2);
