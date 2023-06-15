@@ -19,14 +19,14 @@ async function callAPI() {
 	const inputURL = document.querySelector("#url-input").value;
 	const container = document.querySelector(".shortend-urls-container");
 
-	// Start testing
+	// This if statement checks if the url being entered is valid, by using the function declared below and passing in the urlLink (aka input) as the parameter which is used to test against the condition in the function below
 	if (checkURL(inputURL)) {
 		try {
 			const response = await fetch(
 				`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
 			);
 			const data = await response.json();
-			const urlLink = data.result.short_link;
+			const urlLink = "https://www." + data.result.short_link;
 
 			container.innerHTML += `
 			<div class="shortend-url">
@@ -42,6 +42,7 @@ async function callAPI() {
 			console.log(err);
 		}
 	} else {
+		// Not entirely sure how to have this display, it keeps being out of sync in terms of styling. I dont have an idea as of yet.Besides flex hackiness, I have done enough butcher shop work though today, aha.
 		console.log("Well, not?");
 	}
 
@@ -72,6 +73,8 @@ urlBoxContainer.addEventListener("click", (event) => {
 			});
 	}
 });
+
+// Function to test for validity of the url using URL constructor.
 
 function checkURL(string) {
 	let url;
