@@ -173,7 +173,9 @@ main {
 		border-radius: 10px;
 		width: 50%;
 		font-weight: 800;
-		font-size: 1.125rem;
+		font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+		// not happy with this. will fix ...later. x
+		// font-size: 1.125rem;
 		align-self: center;
 		padding: 0.5em 1em;
 		justify-content: center;

@@ -5,7 +5,8 @@
 	padding: 5ch 0;
 	// changed this to be top-bottom and not left right because it was showing a bit of extra and also shifting the text. i had not seen that when i did it, i was clearly too tired!
 	// font-size: 1.125rem;
-	font-size: clamp(0.75rem, 0.6019rem + 0.7407vw, 1.25rem);
+	font-size: clamp(0.75rem, 0.6019rem + 0.7407vw, 1.125rem);
+	//might have made a small miscalculation here.... i cannot remember.
 	// ch unit, watched a video of it on Kevin Powells channel. Just testing it. Its nice. -- btw. If my sentences dont make sense, sorry, haven't slept in 24+hrs and blasting NF Happy just doens't help with comprehension. X
 
 	@media screen and (min-width: 1000px) {

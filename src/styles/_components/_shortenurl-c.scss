@@ -30,3 +30,8 @@
 		align-items: center;
 	}
 }
+
+.url,
+.input {
+	font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
+}
