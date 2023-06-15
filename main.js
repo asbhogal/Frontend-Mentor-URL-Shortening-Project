@@ -43,29 +43,11 @@ async function callAPI() {
 		}
 	} else {
 		console.log("Well, not?");
+		// const err = document.createElement("span");
+		// err.innerText = "Please enter a valid URL";
+		// document.querySelector("#url-input-label").appendChild(err);
+		// Not right yet... thinking more.
 	}
-	// end testing
-
-	// try {
-	// 	const response = await fetch(
-	// 		`https://api.shrtco.de/v2/shorten?url=${inputURL}/`
-	// 	);
-	// 	const data = await response.json();
-	// 	const urlLink = data.result.short_link;
-
-	// 	container.innerHTML += `
-	// 	<div class="shortend-url">
-	// 		<h2 class="input">${inputURL}</h2>
-	// 		<h2 class="url">${urlLink}</h2>
-	// 		<button class="btn copy-btn">
-	// 		Copy It
-	// 		</button>
-	// 	</div>
-	// 		`;
-	// } catch (err) {
-	// 	err = "Sorry, not sure what happened there!";
-	// 	console.log(err);
-	// }
 
 	// Clear the input box
 	document.querySelector("#url-input").value = "";
