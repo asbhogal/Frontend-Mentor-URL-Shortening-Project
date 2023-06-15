@@ -6,10 +6,17 @@
 }
 
 body {
-	background-color: rgb(234, 234, 227);
 	font-family: $primary-font-family;
 	max-width: 1400px;
+	width: 100%;
 	margin: 0 auto;
+}
+
+main {
+	background-color: #eaeae3;
+	margin: 0 auto;
+	// This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
+	//PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
 }
 
 .header-main {
@@ -22,9 +29,9 @@ body {
 }
 
 .bar {
-	height: 3px;
-	margin-top: 5px;
-	width: 25px;
+	height: 0.1875rem;
+	margin-top: 0.3125rem;
+	width: 1.5625rem;
 	background: $grayish-violet;
 }
 
@@ -67,12 +74,14 @@ body {
 
 		.hero-text-heading {
 			color: $very-dark-blue;
-			font-size: 2.5rem;
+			// font-size: 2.5rem;
+			font-size: clamp(1.125rem, 0.5694rem + 2.7778vw, 3rem);
 		}
 
 		.hero-text-paragraph {
 			color: $grayish-violet;
-			font-size: 1.125rem;
+			// font-size: 1.125rem;
+			font-size: clamp(1rem, 0.9111rem + 0.4444vw, 1.3rem);
 			line-height: 1.5;
 		}
 	}
@@ -196,6 +205,9 @@ body {
 .company-stats-container {
 	text-align: center;
 	padding: 2em 0;
+	border: 2px solid orangered;
+	background-color: #eaeae3;
+	// background-color: $gray;
 }
 
 .company-stats-text {
@@ -205,13 +217,15 @@ body {
 
 	.company-stats-heading {
 		color: $very-dark-blue;
-		font-size: 1.75rem;
+		// font-size: 1.75rem;
+		font-size: clamp(1rem, 0.7778rem + 1.1111vw, 1.75rem);
+		border: 2px solid orange;
 	}
 	.company-stats-paragraph {
 		color: $grayish-violet;
 		line-height: 1.5;
 		margin-top: 1em;
-		font-size: 1.125rem;
+		font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
 	}
 }
 
@@ -236,14 +250,14 @@ body {
 	}
 
 	h3 {
-		font-size: 1.4rem;
+		font-size: clamp(1rem, 0.8889rem + 0.5556vw, 1.375rem);
 		color: $very-dark-blue;
 	}
 
 	p {
 		color: $gray;
 		line-height: 1.5;
-		font-size: 1.125rem;
+		font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
 	}
 
 	// Will change these based on your comments somewhere about using a class for clarity. <3.
@@ -293,14 +307,15 @@ footer {
 
 	.footer-box-heading {
 		margin-bottom: 0.5em;
-		letter-spacing: 1.1px;
+		letter-spacing: 0.0688rem;
 	}
 
 	.footer-box-link {
 		color: $gray;
 		/* letter-spacing: 1.1px; */
 		padding: 0.2em 2em;
-		font-size: 0.85rem;
+		font-size: clamp(0.75rem, 0.713rem + 0.1852vw, 0.875rem);
+		// font-size: 0.85rem;
 	}
 
 	.social-list {
@@ -374,7 +389,7 @@ footer {
 			padding: 1em 5em;
 
 			.hero-text-heading {
-				font-size: 3rem;
+				// font-size: 3rem;
 				text-align: left;
 				line-height: 1.2;
 				color: $very-dark-blue;
@@ -384,7 +399,7 @@ footer {
 				color: $grayish-violet;
 				line-height: 1.5;
 				text-align: left;
-				font-size: 1.3rem;
+				// font-size: 1.3rem;
 			}
 
 			a {
