@@ -1,26 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 // Read this will be removedd from the language syntax, hence the use of @use -- adding the fonts to a local folder in case that is the more optimal way to handle this.
-
-$primary-font-family: "Poppins", sans-serif;
+// have commented this out to ensure the local fonts are used
 
 // Font-face imports
 
+// ADDED FONT NAME AND WEIGHT CLASSES TO HEADINGS FOR EASY SEPARATION
+
+/**** POPPINS - 500 MEDIUM ****/
+
 @font-face {
-  font-family: "Poppins - Medium";
+  font-family: "Poppins"; // changed this to just 'Poppins', weights can then be designated when using them on certain text classes, where it isn't normally set by default, e.g. a heading h2 will apply the bold without needing to specify the font-weight etc. This also matches the value for the $primary-font-family variable
   font-weight: 500;
   font-style: normal;
-  src: url(public/fonts/Poppins-Medium.woff2), format(woff2);
+  src: url(/fonts/Poppins-Medium.woff2) format(woff2); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
   font-display: swap;
   // Thank you -- I will need to look up how to convert these myself and also I need to ask you why you added that swap for display. I dont know what it means, I will Google fu this of course. But in the event I am like a lost puppy.. (insert Inspector Clouseau voice) I'ma just ask.
 
   // Lmao. font-display basically tells the browser to 'swap' the font here for a fallback if it cannot find the actual font, or there's a delay in it loading the font file. It's used as a 'in the meantime.' This ensures the user can still read the content and it hasn't disappeared in that time. I'll send you a link on it and it's other values.
 }
 
+/**** POPPINS - 700 BOLD ****/
+
 @font-face {
-  font-family: "Poppins - Bold";
+  font-family: "Poppins"; // changed this to just 'Poppins', weights can then be designated when using them on certain text classes, where it isn't normally set by default, e.g. a heading h2 will apply the bold without needing to specify the font-weight etc. This also matches the value for the $primary-font-family variable
   font-weight: 700;
   font-style: normal;
-  src: url(public/fonts/Poppins-Bold.woff2), format(woff2);
+  src: url(/fonts/Poppins-Bold.woff2) format(woff2); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
   font-display: swap;
 }
 
