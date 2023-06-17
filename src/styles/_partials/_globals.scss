@@ -3,15 +3,11 @@
 @use "./variables" as *;
 @use "../_components/header" as *;
 
-// Urm, I didn't dream this one. :/ dont know what is happening here. Goodbye world.
-
 * {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	// outline: 1px solid rebeccapurple;
-	// font-size: clamp(1.125rem, 0.5694rem + 2.7778vw, 3rem);
-	// This is hogwash, you know what happened, yes, I did say "Oh sweet Lord, what the actual hell" -- we dont know how this works, yet, lmao.
+	outline: 0.0625rem solid rebeccapurple;
 	&:is(&::after, &::before, *) {
 		box-sizing: border-box;
 	}

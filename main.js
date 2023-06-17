@@ -3,6 +3,8 @@ import "./src/styles/index.scss";
 // Global variables
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const shortenLinkBtn = document.querySelector(".shorten-link-btn");
+const container = document.querySelector(".shortend-urls-container");
+container.innerHTML = getHTML();
 
 // Event listeners
 shortenLinkBtn.addEventListener("click", callAPI);
@@ -29,16 +31,18 @@ async function callAPI() {
 			);
 			const data = await response.json();
 			const urlLink = "https://www." + data.result.short_link;
+			const urlPackage = { original: inputURL, short: urlLink };
 
 			container.innerHTML += `
 			<div class="shortend-url">
 				<h2 class="input">${inputURL}</h2>
 				<h2 class="url">${urlLink}</h2>
-				<button class="btn copy-btn"> 
-				Copy It 
+				<button class="btn copy-btn">
+				Copy It
 				</button>
 			</div>
 				`;
+			linksInStorage(urlPackage);
 		} catch (err) {
 			err = "Sorry, not sure what happened there!";
 			console.log(err);
@@ -50,6 +54,7 @@ async function callAPI() {
 
 	// Clear the input box
 	document.querySelector("#url-input").value = "";
+	getHTML();
 }
 
 /// Clipboard API
@@ -89,3 +94,27 @@ function checkURL(string) {
 }
 
 //
+function linksInStorage(link) {
+	let linkHistory = JSON.parse(localStorage.getItem("linkies")) || [];
+	linkHistory.push(link);
+	localStorage.setItem("linkies", JSON.stringify(linkHistory));
+	return linkHistory;
+}
+
+function getHTML() {
+	let content = linksInStorage();
+	let html = "";
+	content.forEach((item) => {
+		if (item) {
+			html += `<div class="shortend-url">
+			<h2 class="input">${item.original}</h2>
+			<h2 class="url">${item.short}</h2>
+			<button class="btn copy-btn"> 
+			Copy It 
+			</button>
+		</div>
+			`;
+		}
+	});
+	return html;
+}
