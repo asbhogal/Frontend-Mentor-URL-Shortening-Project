@@ -273,6 +273,14 @@ main {
 	}
 }
 
+.seperator {
+	border: 5px solid $cyan;
+	height: 90%;
+	position: absolute;
+}
+
+// For the tree lines, you can add a div called separator and give it some styling (height, width, background-color, position, top.) Set it's display to none for widths greater than or equal to 1000px, and a display of initial for widths less than or equal to 999px (since after this, at 1000px, the content flows horizontal). You will also need to remove the margin value for the .block-item when the content flows vertically (at widths equal to or less than 999px) as this prevents the separator line from 'connecting' between the blocks.
+
 // Boost container
 
 .boost-links-container {
@@ -453,15 +461,29 @@ footer {
 			// Answer: content looks okay I think for 1900+px. a fixed max-width with a width of 100% and margin: 0 auto is what I'd go for. Also, you can remove the max-height, as the height has already been explicitly set, which itself sets the maximum height. max-height would be useful if we wanted the height of the elements to be flexible up to a certain max height.
 			text-align: left;
 
-			&:nth-of-type(1) {
-				position: relative;
-				top: -20px;
-			}
+			// &:nth-of-type(1) {
+			// 	position: relative;
+			// 	top: -20px;
+			// }
 
-			&:nth-of-type(3) {
-				position: relative;
-				top: 20px;
-			}
+			// &:nth-of-type(3) {
+			// 	position: relative;
+			// 	top: 20px;
+			// }
+		}
+
+		.first-block {
+			position: relative;
+			top: -20px;
+		}
+
+		.third-block {
+			position: relative;
+			top: 20px;
+		}
+
+		.seperator {
+			display: none;
 		}
 
 		.block-item-icon {
