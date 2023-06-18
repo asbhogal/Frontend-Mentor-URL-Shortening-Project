@@ -55,6 +55,7 @@ async function callAPI() {
 		// Not entirely sure how to have this display, it keeps being out of sync in terms of styling. I dont have an idea as of yet.Besides flex hackiness, I have done enough butcher shop work though today, aha.
 		console.log("Well, not?");
 		document.querySelector(".error").style.display = "block";
+		document.querySelector("#url-input").style.border = "2px solid red";
 	}
 
 	// Clear the input box
