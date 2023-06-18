@@ -9,7 +9,6 @@ container.innerHTML = getHTML();
 // Event listeners
 shortenLinkBtn.addEventListener("click", callAPI);
 hamburgerMenu.addEventListener("click", function () {
-	console.log("clicked");
 	const navList = document.querySelector(".nav-list");
 	if (navList.classList.contains("hidden")) {
 		navList.classList.remove("hidden");
@@ -49,13 +48,11 @@ async function callAPI() {
 			linksInStorage(urlPackage);
 		} catch (err) {
 			err = "Sorry, not sure what happened there!";
-			console.log(err);
+			document.querySelector(".error").style.display = "block";
+			document.querySelector("#url-input").style.border = "2px solid red";
 		}
 	} else {
 		// Not entirely sure how to have this display, it keeps being out of sync in terms of styling. I dont have an idea as of yet.Besides flex hackiness, I have done enough butcher shop work though today, aha.
-		console.log("Well, not?");
-		document.querySelector(".error").style.display = "block";
-		document.querySelector("#url-input").style.border = "2px solid red";
 	}
 
 	// Clear the input box
