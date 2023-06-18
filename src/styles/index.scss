@@ -137,6 +137,15 @@ main {
 	}
 }
 
+.error {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	color: rgb(231, 48, 48);
+}
+
 .shortend-urls-container {
 	margin-top: 6em;
 	font-weight: 100;

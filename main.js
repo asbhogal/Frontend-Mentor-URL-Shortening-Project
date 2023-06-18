@@ -33,6 +33,10 @@ async function callAPI() {
 			const urlLink = "https://www." + data.result.short_link;
 			const urlPackage = { original: inputURL, short: urlLink };
 
+			//
+			document.querySelector(".error").style.display = "none";
+			document.querySelector("#url-input").style.border = "2px solid green";
+
 			container.innerHTML += `
 			<div class="shortend-url">
 				<h2 class="input">${inputURL}</h2>
@@ -50,6 +54,7 @@ async function callAPI() {
 	} else {
 		// Not entirely sure how to have this display, it keeps being out of sync in terms of styling. I dont have an idea as of yet.Besides flex hackiness, I have done enough butcher shop work though today, aha.
 		console.log("Well, not?");
+		document.querySelector(".error").style.display = "block";
 	}
 
 	// Clear the input box
