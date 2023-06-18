@@ -231,6 +231,7 @@ main {
 	@include flex-default;
 	flex-direction: column;
 	gap: 10px;
+	position: relative;
 }
 
 .block-item {
