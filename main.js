@@ -19,20 +19,19 @@ async function callAPI() {
   const container = document.querySelector(".shortend-urls-container");
 
   // This if statement checks if the url being entered is valid, by using the function declared below and passing in the urlLink (aka input) as the parameter which is used to test against the condition in the function below
-  if (checkURL(inputURL)) {
-    try {
-      const response = await fetch(
-        `https://api.shrtco.de/v2/shorten?url=${inputURL}/`
-      );
-      const data = await response.json();
-      const urlLink = "https://www." + data.result.short_link;
-      const urlPackage = { original: inputURL, short: urlLink };
+  try {
+    const response = await fetch(
+      `https://api.shrtco.de/v2/shorten?url=${inputURL}/`
+    );
+    const data = await response.json();
+    const urlLink = "https://www." + data.result.short_link;
+    const urlPackage = { original: inputURL, short: urlLink };
 
-      //
-      document.querySelector(".error").style.display = "none";
-      document.querySelector("#url-input").style.border = "2px solid green";
+    //
+    document.querySelector(".error").style.display = "none";
+    document.querySelector("#url-input").style.border = "2px solid green";
 
-      container.innerHTML += `
+    container.innerHTML += `
 			<div class="shortend-url">
 				<h2 class="input">${inputURL}</h2>
 				<h2 class="url">${urlLink}</h2>
@@ -41,15 +40,12 @@ async function callAPI() {
 				</button>
 			</div>
 				`;
-      linksInStorage(urlPackage);
-    } catch (err) {
-      err = "Sorry, not sure what happened there!";
-      document.querySelector(".error").style.display = "block";
-      document.querySelector("#url-input").style.border = "2px solid red";
-    }
-  } else {
-    // Not entirely sure how to have this display, it keeps being out of sync in terms of styling. I dont have an idea as of yet.Besides flex hackiness, I have done enough butcher shop work though today, aha.
-  }
+    linksInStorage(urlPackage);
+  } catch (err) {
+    err = "Sorry, not sure what happened there!";
+    document.querySelector(".error").style.display = "block";
+    document.querySelector("#url-input").style.border = "2px solid red";
+  } // temporarily removed if-else as code inside wasn't running. Will review this - this function is therefore likely to change in future commits
 
   // Clear the input box
   document.querySelector("#url-input").value = "";
