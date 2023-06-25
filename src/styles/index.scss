@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
 }
 
-/* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width */
+/* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width. For some reason the margin: 0; which I added to the body isn't therefore working. If it did, this problem shouldn't have happened. I'll look into why it isn't, maybe something I've overlooked */
 
 main {
   background-color: #eaeae3;
