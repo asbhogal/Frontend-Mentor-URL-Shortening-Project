@@ -107,15 +107,22 @@ function getHTML() {
   let html = "";
   content.forEach((item) => {
     if (item) {
-      html += `<div class="shortend-url">
-			<h2 class="input">${item.original}</h2>
-			<h2 class="url">${item.short}</h2>
-			<button class="btn copy-btn"> 
-			Copy It 
-			</button>
+      html += `
+        <div class="shortend-url">
+          <div class="shortend-left-section">
+			      <h2 class="input">${item.original}</h2>
+          </div>
+          <div class="shortend-right-section">
+			      <h2 class="url">${item.short}</h2>
+			      <button class="btn copy-btn"> 
+              Copy It 
+            </button>
+          </div>
 		</div>
 			`;
     }
   });
   return html;
 }
+
+// I've modified the html content above for the getHTML() function to match the mockup better. The respective styling is in the index.scss file (this will likely change location as I move things around).

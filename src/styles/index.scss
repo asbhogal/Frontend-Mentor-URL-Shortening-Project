@@ -7,14 +7,18 @@
 
 body {
   font-family: $primary-font-family;
-  max-width: 1400px;
-  width: 100%;
+  /* max-width: 1400px; // moving this to the main class itself, as this omits the left and right margin
+  width: 100%; */
   margin: 0 auto;
 }
+
+/* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width */
 
 main {
   background-color: #eaeae3;
   margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
   // This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
   //PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
 }
@@ -162,7 +166,7 @@ main {
   width: 90%;
   // added a width of 90% because I dont like the boxes touching on small screens.
   margin: 0.75em auto;
-  border-radius: 10px;
+  border-radius: 5px; // changed to better reflect mockup
   padding: 0.5em 0;
   text-align: center;
 
@@ -175,7 +179,7 @@ main {
 
   .copy-btn {
     @include flex-default;
-    border-radius: 10px;
+    border-radius: 5px; // changed to better reflect mockup
     width: 50%;
     font-weight: 800;
     font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
@@ -189,6 +193,13 @@ main {
       cursor: pointer;
     }
   }
+}
+
+.shortend-right-section {
+  // respective styling for the new section created for the generated URLs
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .btn {
@@ -436,7 +447,7 @@ footer {
 
     .copy-btn {
       @include flex-default;
-      border-radius: 10px;
+      border-radius: 5px; // changed to better match mockup
       width: auto;
 
       &:is(:hover, :focus, :active) {
