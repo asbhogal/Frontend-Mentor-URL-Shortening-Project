@@ -46,10 +46,10 @@ main {
   color: $white;
   font-family: $primary-font-family;
 
-  & > li,
+  /* & > li,
   .nav-item-m {
     @include nav-list-link-spacing;
-  }
+  } */ // refactored - see header section
 }
 
 .nav-sign-up-btn {

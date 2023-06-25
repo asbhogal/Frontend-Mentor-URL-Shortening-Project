@@ -1,42 +1,56 @@
 .header-main {
-	position: relative;
-	padding: 1em;
-	max-height: 80px;
-	align-items: center;
-	justify-content: space-between;
+  position: relative;
+  padding: 1em;
+  max-height: 80px;
+  align-items: center;
+  justify-content: space-between;
 
-	img {
-		display: block;
-		height: 30px;
-	}
+  img {
+    display: block;
+    height: 30px;
+  }
 }
 
 .hamburger-menu {
-	position: absolute;
-	top: 50%;
-	left: 85%;
-	transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%);
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .nav-list {
-	position: absolute;
-	top: 60px;
-	left: 50%;
-	transform: translateX(-50%);
-	//
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  //
 
-	border-radius: 10px;
-	width: 85%;
-	padding: 0.5em 1em;
-	font-size: 1.15rem;
-	text-align: center;
-	//
+  border-radius: 10px;
+  width: 85%;
+  padding: 0.5em 1em;
+  font-size: 1.15rem;
+  text-align: center;
+  //
 
-	.nav-item {
+  /* .nav-item {
 		margin-top: 0.5em;
-	}
+	} */ // omitted - will be refactored in change to nav list styling (see below)
+}
+
+.nav-list,
+.nav-list-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
+  .nav-item,
+  .nav-item-m {
+    font-weight: 900;
+  }
+  .nav-sign-up-btn {
+    display: inherit;
+  }
 }
