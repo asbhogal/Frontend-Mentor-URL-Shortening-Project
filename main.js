@@ -38,11 +38,15 @@ async function callAPI() {
 
     container.innerHTML += `
 			<div class="shortend-url">
-				<h2 class="input">${inputURL}</h2>
-				<h2 class="url">${urlLink}</h2>
-				<button class="btn copy-btn">
-				Copy It
-				</button>
+        <div class="shortend-left-section">
+				  <h2 class="input">${inputURL}</h2>
+        </div>
+        <div class="shortend-right-section">
+          <h2 class="url">${urlLink}</h2>
+          <button class="btn copy-btn">
+          Copy It
+          </button>
+        </div>
 			</div>
 				`;
     linksInStorage(urlPackage);
@@ -118,7 +122,7 @@ function getHTML() {
               Copy It 
             </button>
           </div>
-		</div>
+		    </div>
 			`;
     }
   });
