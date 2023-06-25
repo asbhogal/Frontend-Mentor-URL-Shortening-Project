@@ -1,37 +1,37 @@
 .link-shorten-container {
-	background-image: url(/bg-shorten-mobile.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
-	background-repeat: no-repeat;
-	background-position: top right;
-	position: absolute;
-	//
-	left: 0;
-	right: 0;
-	transform: translateX(-0%);
-	transform: translateY(-50%);
+  background-image: url(/bg-shorten-mobile.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  //
+  left: 0;
+  right: 0;
+  // transform: translateX(-0%); // omitted as has no effect (X value is 0% by default unless explicitly set to something else)
+  transform: translateY(-50%);
 
-	// Oh-----it worked. Keywords op. Math, who? Never really got along with her.
+  // Oh-----it worked. Keywords op. Math, who? Never really got along with her.
 
-	@media screen and (min-width: 1000px) {
-		// transform: translateX(-15%);
-		left: 0;
-		right: 0;
-		//lmao ---- all this time, wow Kay, wow!
-		// Eh ? Does it work? Is this normal? -- comment from 1hr ago, to remind yourself of your silliness, think.
-		transform: translateY(-50%);
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
-		//
-		background-image: url(/bg-shorten-desktop.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
-		height: 12ch;
-		background-position: top center;
-		// This is not correct. I have tried many combos, it all looks off, might be height causing an issue too. I tried.
-		background-repeat: no-repeat;
-		align-items: center;
-	}
+  @media screen and (min-width: 1000px) {
+    // transform: translateX(-15%);
+    // left: 0; // omitted as has no effect
+    // right: 0; // omitted as has no effect
+    //lmao ---- all this time, wow Kay, wow!
+    // Eh ? Does it work? Is this normal? -- comment from 1hr ago, to remind yourself of your silliness, think.
+    // transform: translateY(-50%); omitted as already set globally above
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    //
+    background-image: url(/bg-shorten-desktop.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
+    height: 12ch;
+    background-position: top center;
+    // This is not correct. I have tried many combos, it all looks off, might be height causing an issue too. I tried.
+    background-repeat: no-repeat;
+    align-items: center;
+  }
 }
 
 .url,
 .input {
-	font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
+  font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
 }
