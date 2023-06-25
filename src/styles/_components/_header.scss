@@ -41,16 +41,18 @@
 	} */ // omitted - will be refactored in change to nav list styling (see below)
 }
 
-.nav-list,
-.nav-list-secondary {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
-  .nav-item,
-  .nav-item-m {
-    font-weight: 900;
-  }
-  .nav-sign-up-btn {
-    display: inherit;
+@media only screen and (width <= 999px) {
+  .nav-list,
+  .nav-list-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
+    .nav-item,
+    .nav-item-m {
+      font-weight: 900;
+    }
+    .nav-sign-up-btn {
+      display: inherit;
+    }
   }
 }
