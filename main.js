@@ -3,11 +3,16 @@ import "./src/styles/index.scss";
 // Global variables
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const shortenLinkBtn = document.querySelector(".shorten-link-btn");
+const linkInput = document.querySelector(".link-input"); // added variable for link input to append an event listener too (see below)
 const container = document.querySelector(".shortend-urls-container");
 container.innerHTML = getHTML();
 
 // Event listeners
 shortenLinkBtn.addEventListener("click", callAPI);
+linkInput.addEventListener("keyup", function (e) {
+  // added an event listener for when the user presses 'enter' on their keyboard - a common UX feature. This listens for the respective key value for the enter button, then calls the function callAPI
+  e.keyCode === 13 && (e.preventDefault(), callAPI());
+});
 hamburgerMenu.addEventListener("click", function () {
   const navList = document.querySelector(".nav-list");
   navList.classList.toggle("hidden"); // A much cleaner way is to use the toggle() function to toggle the "hidden" class of the ".nav-list". If the class is present,it will be removed. if it isn't present, it will be added.
