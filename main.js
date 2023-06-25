@@ -21,7 +21,7 @@ hamburgerMenu.addEventListener("click", function () {
 // The API.
 async function callAPI() {
   const inputURL = document.querySelector("#url-input").value;
-  const container = document.querySelector(".shortend-urls-container");
+  // const container = document.querySelector(".shortend-urls-container"); omitted as this is declared globally above
 
   // This if statement checks if the url being entered is valid, by using the function declared below and passing in the urlLink (aka input) as the parameter which is used to test against the condition in the function below
   try {
@@ -29,7 +29,7 @@ async function callAPI() {
       `https://api.shrtco.de/v2/shorten?url=${inputURL}/`
     );
     const data = await response.json();
-    const urlLink = "https://www." + data.result.short_link;
+    const urlLink = `https://www.${data.result.short_link}`; // replaced concatenated string value with template literals for ES6 consistency
     const urlPackage = { original: inputURL, short: urlLink };
 
     //
@@ -87,7 +87,7 @@ urlBoxContainer.addEventListener("click", (event) => {
 // Function to test for validity of the url using URL constructor.
 
 function checkURL(string) {
-  let url;
+  /* let url;
 
   try {
     url = new URL(string);
@@ -95,7 +95,14 @@ function checkURL(string) {
     return false;
   }
 
-  return url.protocol === "http:" || url.protocol === "https:";
+  return url.protocol === "http:" || url.protocol === "https:"; */
+
+  const urlPattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/.*)?$/i;
+  return urlPattern.test(string);
+
+  // when checking the validity of an entry, in this case a URL, it is standard practice to use regular expressions to check if the entry matches a defined pattern which deems it 'acceptable' or not. This uses the test() method and returns a boolean value (true or false) indicating whether the string is a valid URL according to the pattern.
+
+  // regex is difficult to understand at first - I'll send you notes about it in detail, which should (hopefully) help with the side studying in it (if you haven't started regex yet, I can send you a good freeCodeCamp tutorial)
 }
 
 //
