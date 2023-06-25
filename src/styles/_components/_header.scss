@@ -1,3 +1,5 @@
+@use "../_partials/variables" as *;
+
 .header-main {
   position: relative;
   padding: 1em;
@@ -27,18 +29,18 @@
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  //
-
   border-radius: 10px;
   width: 85%;
   padding: 0.5em 1em;
   font-size: 1.15rem;
   text-align: center;
-  //
-
   /* .nav-item {
 		margin-top: 0.5em;
 	} */ // omitted - will be refactored in change to nav list styling (see below)
+}
+
+.nav-list-secondary {
+  list-style-type: none;
 }
 
 // the following adds styling for the mobile menu to match the mockup better - a media query is used to ensure it only applies to the mobile menu, as the class name is the same
@@ -56,5 +58,13 @@
     .nav-sign-up-btn {
       display: inherit;
     }
+    .separator {
+      height: 1px;
+      background-color: $grayish-violet;
+    }
+  }
+
+  .nav-list.hidden {
+    display: none;
   }
 }
