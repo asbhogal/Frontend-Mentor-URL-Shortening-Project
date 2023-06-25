@@ -48,7 +48,7 @@ async function callAPI() {
           </button>
         </div>
 			</div>
-				`;
+				`; // updated this to match the template in the getHTML() function below (so both stored links and new generated ones follow the same styling)
     linksInStorage(urlPackage);
   } catch (err) {
     console.log(err); // added logging the error to console - will also help with debugging
