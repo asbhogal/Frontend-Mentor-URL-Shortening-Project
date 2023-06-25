@@ -41,7 +41,9 @@
 	} */ // omitted - will be refactored in change to nav list styling (see below)
 }
 
+// the following adds styling for the mobile menu to match the mockup better - a media query is used to ensure it only applies to the mobile menu, as the class name is the same
 @media only screen and (width <= 999px) {
+  // this basically says "width is less than or equal to 999px", love these expressions
   .nav-list,
   .nav-list-secondary {
     display: flex;
