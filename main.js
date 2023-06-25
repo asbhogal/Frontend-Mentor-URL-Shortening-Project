@@ -47,6 +47,7 @@ async function callAPI() {
 				`;
     linksInStorage(urlPackage);
   } catch (err) {
+    console.log(err); // added logging the error to console - will also help with debugging
     err = "Sorry, not sure what happened there!";
     document.querySelector(".error").style.display = "block";
     document.querySelector("#url-input").style.border = "2px solid red";
@@ -70,7 +71,7 @@ urlBoxContainer.addEventListener("click", (event) => {
       .writeText(urlToCopy)
       .then(() => {
         // Temp styling and changed on copy, its 6-am and my brain is just not having this "sleep deprivation" anymore. But, I am happy it works. Will work on it more.
-        clicked.innerText = "Copied";
+        clicked.innerText = "Copied!"; // slight modification to this just to reflect mockups active state - addition of !
         clicked.style.backgroundColor = "#3b3054";
       })
       .catch((err) => {
