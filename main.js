@@ -39,16 +39,19 @@ async function callAPI() {
     container.innerHTML += `
 			<div class="shortend-url">
         <div class="shortend-left-section">
-				  <h2 class="input">${inputURL}</h2>
+				  <a class="input">${inputURL}</a>
         </div>
         <div class="shortend-right-section">
-          <h2 class="url">${urlLink}</h2>
+          <a class="url">${urlLink}</a>
           <button class="btn copy-btn">
           Copy It
           </button>
         </div>
 			</div>
 				`; // updated this to match the template in the getHTML() function below (so both stored links and new generated ones follow the same styling)
+
+    // changed the h2 content to a tags to make them more semantically correct - should avoid multiple h2 tags and use them for subheadings
+
     linksInStorage(urlPackage);
   } catch (err) {
     console.log(err); // added logging the error to console - will also help with debugging
@@ -121,10 +124,10 @@ function getHTML() {
       html += `
         <div class="shortend-url">
           <div class="shortend-left-section">
-			      <h2 class="input">${item.original}</h2>
+			      <a class="input">${item.original}</a>
           </div>
           <div class="shortend-right-section">
-			      <h2 class="url">${item.short}</h2>
+			      <a class="url">${item.short}</a>
 			      <button class="btn copy-btn"> 
               Copy It 
             </button>
@@ -137,3 +140,5 @@ function getHTML() {
 }
 
 // I've modified the html content above for the getHTML() function to match the mockup better. The respective styling is in the index.scss file (this will likely change location as I move things around).
+
+// changed the h2 content to a tags to make them more semantically correct - should avoid multiple h2 tags and use them for subheadings
