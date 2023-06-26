@@ -55,9 +55,12 @@ async function callAPI() {
     linksInStorage(urlPackage);
   } catch (err) {
     console.log(err); // added logging the error to console - will also help with debugging
-    err = "Sorry, not sure what happened there!";
+    // err = "Sorry, not sure what happened there!"; // omitted as doesn't show in the console log
     document.querySelector(".error").style.display = "block";
     document.querySelector("#url-input").style.border = "2px solid red";
+    document
+      .querySelector("#url-input")
+      .style.setProperty("--color", "#f46262"); // when the catch is run, the --color variable is passed red for the placeholder text
   } // temporarily removed if-else as code inside wasn't running. Will review this - this function is therefore likely to change in future commits
 
   // Clear the input box

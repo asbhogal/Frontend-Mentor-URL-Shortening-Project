@@ -109,7 +109,7 @@ main {
 
 .link-shorten-container {
   display: flex;
-  border: 2px solid red;
+  // border: 2px solid red; // omitted to match mockup
   flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
   gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
   background-color: $dark-violet;
@@ -131,6 +131,12 @@ main {
     padding: 1em 0;
     text-indent: 10px;
     border-radius: 10px;
+    &::placeholder {
+      color: var(
+        --color,
+        #757575
+      ); // here we add two parameters to the variable for the color of the placeholder, which is then changed using JS, initially, it has the default color of the placeholder (see script for further notes)
+    }
   }
 
   .shorten-link-btn {
@@ -146,6 +152,7 @@ main {
   position: absolute;
   bottom: 0;
   color: rgb(231, 48, 48);
+  font-style: italic; // added to match mockup
 }
 
 .shortend-urls-container {
