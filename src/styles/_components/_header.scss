@@ -56,9 +56,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
+		// I must say, it was like a treasure hunt, finding the nav items. (:
 		.nav-item,
 		.nav-item-m {
 			font-weight: 900;
+			cursor: pointer;
+			// Added cursor pointer, I think it looks nicer.
 		}
 		.nav-sign-up-btn {
 			display: inherit;
