@@ -14,6 +14,8 @@ body {
 
 /* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width. For some reason the margin: 0; which I added to the body isn't therefore working. If it did, this problem shouldn't have happened. I'll look into why it isn't, maybe something I've overlooked */
 
+// I think I understand. It makes sense. But I will think more on your explanation and if I somewhow discover it does not make sense in my head I will ask you to maybe explain it, again, if you dont mind of course.
+
 main {
 	background-color: #eaeae3;
 	margin: 0 auto;
@@ -169,6 +171,8 @@ main {
 .shortend-url {
 	@include flex-column;
 	background-color: $white;
+	border: 3px solid pink;
+	// Here so I could find it.
 	max-width: 850px;
 	width: 90%;
 	// added a width of 90% because I dont like the boxes touching on small screens.
