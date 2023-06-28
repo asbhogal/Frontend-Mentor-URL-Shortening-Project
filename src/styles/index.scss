@@ -27,6 +27,7 @@ main {
 
 .header-main {
 	@include flex-default;
+	// Am I blind or is this literally doing nothing here? :/ I am so confused, I dont have enough cookie in my system for this....
 	background-color: $white;
 }
 
@@ -394,16 +395,21 @@ footer {
 		@include flex-default;
 		justify-content: space-between;
 		position: relative;
+		border: 4px solid navy;
 
 		.nav-list {
 			@include flex-default;
 			position: absolute;
-			top: 0;
+			// top: 0;
+			top: 10%;
+			// I seem to be having a fundamental issue here; I am struggling to undertand the knowledge breakdown. I dont understand why I cannot make this do what I want. -- I will likely not be satisfied with this. I am not. I am confused.
+			transform: translateY(-10%);
 			right: 120%;
 			transform: translateX(-120%);
 			background-color: transparent;
 			width: 30%;
 			border-radius: 0;
+			border: 2px solid green;
 			color: $grayish-violet;
 			font-weight: 700;
 			font-size: 1rem;

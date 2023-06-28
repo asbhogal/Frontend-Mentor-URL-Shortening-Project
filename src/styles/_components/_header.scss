@@ -3,9 +3,11 @@
 .header-main {
 	position: relative;
 	padding: 1em;
-	max-height: 80px;
-	align-items: center;
-	justify-content: space-between;
+	height: 60px;
+	// max-height: 80px;
+	// align-items: center;
+	// justify-content: space-between;
+	border: 2px solid magenta;
 
 	img {
 		display: block;
