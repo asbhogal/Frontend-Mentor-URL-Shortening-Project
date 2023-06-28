@@ -138,6 +138,7 @@ main {
 				--color,
 				#757575
 			); // here we add two parameters to the variable for the color of the placeholder, which is then changed using JS, initially, it has the default color of the placeholder (see script for further notes)
+			// Seen. Also thanks for using this. I had read about how SCSS can be used programatically this way, this is a nice example of that.
 		}
 	}
 
@@ -197,7 +198,7 @@ main {
 		align-self: center;
 		padding: 0.5em 1em;
 		justify-content: center;
-		border: 2px solid red;
+		// border: 2px solid red;
 
 		&:is(:hover, :focus, :active) {
 			cursor: pointer;

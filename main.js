@@ -15,7 +15,8 @@ linkInput.addEventListener("keyup", function (e) {
 });
 hamburgerMenu.addEventListener("click", function () {
 	const navList = document.querySelector(".nav-list");
-	navList.classList.toggle("hidden"); // A much cleaner way is to use the toggle() function to toggle the "hidden" class of the ".nav-list". If the class is present,it will be removed. if it isn't present, it will be added.
+	navList.classList.toggle("hidden");
+	// A much cleaner way is to use the toggle() function to toggle the "hidden" class of the ".nav-list". If the class is present,it will be removed. if it isn't present, it will be added.
 });
 
 // The API.
