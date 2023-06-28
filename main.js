@@ -60,7 +60,9 @@ async function callAPI() {
 		document.querySelector("#url-input").style.border = "2px solid red";
 		document
 			.querySelector("#url-input")
-			.style.setProperty("--color", "#f46262"); // when the catch is run, the --color variable is passed red for the placeholder text
+			.style.setProperty("--color", "#f46262");
+		// when the catch is run, the --color variable is passed red for the placeholder text
+		// Oh, I have never seen this before. Very cool.
 	} // temporarily removed if-else as code inside wasn't running. Will review this - this function is therefore likely to change in future commits
 
 	// Clear the input box
@@ -83,6 +85,8 @@ urlBoxContainer.addEventListener("click", (event) => {
 				// Temp styling and changed on copy, its 6-am and my brain is just not having this "sleep deprivation" anymore. But, I am happy it works. Will work on it more.
 				clicked.innerText = "Copied!"; // slight modification to this just to reflect mockups active state - addition of !
 				clicked.style.backgroundColor = "#3b3054";
+				clicked.style.transition = " background-color .5s ease-in-out";
+				//
 			})
 			.catch((err) => {
 				console.error(`Error copying text to clipboard: ${err}`);
