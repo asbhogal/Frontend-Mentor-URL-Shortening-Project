@@ -1,80 +1,80 @@
 @use "../_partials/variables" as *;
 
 .header-main {
-	position: relative;
-	padding: 1em;
-	height: 60px;
-	// max-height: 80px;
-	// align-items: center;
-	// justify-content: space-between;
-	border: 2px solid magenta;
+  position: relative;
+  padding: 1em;
+  height: 60px;
+  // max-height: 80px;
+  // align-items: center;
+  // justify-content: space-between;
+  // border: 2px solid magenta; // temporarily omitted
 
-	img {
-		display: block;
-		height: 30px;
-	}
+  img {
+    display: block;
+    height: 30px;
+  }
 }
 
 .hamburger-menu {
-	position: absolute;
-	top: 50%;
-	left: 85%;
-	transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translateY(-50%);
 
-	&:is(:hover, :active, :focus) {
-		cursor: pointer;
-		// Added this because its nicer, a que that you can click this. Hope that's alright.
-	}
+  &:is(:hover, :active, :focus) {
+    cursor: pointer;
+    // Added this because its nicer, a que that you can click this. Hope that's alright.
+  }
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .nav-list {
-	position: absolute;
-	top: 60px;
-	left: 50%;
-	transform: translateX(-50%);
-	border-radius: 10px;
-	width: 85%;
-	padding: 0.5em 1em;
-	font-size: 1.15rem;
-	text-align: center;
-	/* .nav-item {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  width: 85%;
+  padding: 0.5em 1em;
+  font-size: 1.15rem;
+  text-align: center;
+  /* .nav-item {
 		margin-top: 0.5em;
 	} */ // omitted - will be refactored in change to nav list styling (see below)
 }
 
 .nav-list-secondary {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 // the following adds styling for the mobile menu to match the mockup better - a media query is used to ensure it only applies to the mobile menu, as the class name is the same
 @media only screen and (width <= 999px) {
-	// this basically says "width is less than or equal to 999px", love these expressions
-	.nav-list,
-	.nav-list-secondary {
-		display: flex;
-		flex-direction: column;
-		gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
-		// I must say, it was like a treasure hunt, finding the nav items. (:
-		.nav-item,
-		.nav-item-m {
-			font-weight: 900;
-			cursor: pointer;
-			// Added cursor pointer, I think it looks nicer.
-		}
-		.nav-sign-up-btn {
-			display: inherit;
-		}
-		.separator {
-			height: 1px;
-			background-color: $grayish-violet;
-		}
-	}
+  // this basically says "width is less than or equal to 999px", love these expressions
+  .nav-list,
+  .nav-list-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
+    // I must say, it was like a treasure hunt, finding the nav items. (:
+    .nav-item,
+    .nav-item-m {
+      font-weight: 900;
+      cursor: pointer;
+      // Added cursor pointer, I think it looks nicer.
+    }
+    .nav-sign-up-btn {
+      display: inherit;
+    }
+    .separator {
+      height: 1px;
+      background-color: $grayish-violet;
+    }
+  }
 
-	.nav-list.hidden {
-		display: none;
-	}
+  .nav-list.hidden {
+    display: none;
+  }
 }
