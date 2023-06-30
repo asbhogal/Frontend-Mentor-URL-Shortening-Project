@@ -1,5 +1,18 @@
 @use "./variables" as *;
 
+@mixin flex-default {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  place-content: center center;
+}
+
 @mixin font-styling {
   color: $cyan;
 }
@@ -19,4 +32,11 @@
 
 @mixin nav-list-link-spacing {
   margin: 0.75em 0;
+}
+
+@mixin btn {
+  padding: 1em 2em;
+  text-decoration: none;
+  background-color: $cyan;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 @use "./_partials/" as *;
 @use "./_components/" as *;
+@use "./_partials/responsive" as *;
 
 * {
   font-family: $primary-font-family;
