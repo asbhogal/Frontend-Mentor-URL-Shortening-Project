@@ -1,6 +1,10 @@
 @use "../_partials/variables" as *;
+@use "../_partials/mixins" as *;
 
 .header-main {
+  @include flex-default;
+  // Am I blind or is this literally doing nothing here? :/ I am so confused, I dont have enough cookie in my system for this....
+  background-color: $white;
   position: relative;
   padding: 1em;
   height: 60px;
@@ -16,6 +20,7 @@
 }
 
 .hamburger-menu {
+  @include flex-column;
   position: absolute;
   top: 50%;
   left: 85%;

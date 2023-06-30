@@ -2,9 +2,9 @@
 @use "./_components/" as *;
 @use "./_partials/responsive" as *;
 
-* {
+/* * {
   font-family: $primary-font-family;
-}
+} */
 
 body {
   font-family: $primary-font-family;
@@ -24,16 +24,6 @@ main {
   width: 100%;
   // This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
   //PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
-}
-
-.header-main {
-  @include flex-default;
-  // Am I blind or is this literally doing nothing here? :/ I am so confused, I dont have enough cookie in my system for this....
-  background-color: $white;
-}
-
-.hamburger-menu {
-  @include flex-column;
 }
 
 .bar {
