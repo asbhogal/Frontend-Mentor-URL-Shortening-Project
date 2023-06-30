@@ -33,72 +33,6 @@ main {
   background: $grayish-violet;
 }
 
-.nav-list {
-  @include default-list-style;
-  background-color: $dark-violet;
-  user-select: none;
-  color: $white;
-  font-family: $primary-font-family;
-
-  /* & > li,
-  .nav-item-m {
-    @include nav-list-link-spacing;
-  } */ // refactored - see header section
-}
-
-.nav-sign-up-btn {
-  @include btn;
-  border-radius: 50px;
-  padding: 0.5em 3em;
-  color: $white;
-}
-
-// Hero Section
-
-.hero-container {
-  @include flex-default;
-  flex-direction: column;
-  background-color: $white;
-  padding-bottom: 5em;
-
-  .hero-image,
-  .hero-text {
-    width: 100%;
-    text-align: center;
-    @include flex-default;
-    flex-direction: column;
-    padding: 1em;
-    margin-bottom: 2em;
-
-    .hero-text-heading {
-      color: $very-dark-blue;
-      // font-size: 2.5rem;
-      font-size: clamp(1.125rem, 0.5694rem + 2.7778vw, 3rem);
-    }
-
-    .hero-text-paragraph {
-      color: $grayish-violet;
-      // font-size: 1.125rem;
-      font-size: clamp(1rem, 0.9111rem + 0.4444vw, 1.3rem);
-      line-height: 1.5;
-    }
-  }
-
-  .hero-text * {
-    margin-top: 1em;
-  }
-
-  .hero-image {
-    order: -1;
-
-    img {
-      display: block;
-      margin: 1em auto;
-      max-width: 100%;
-    }
-  }
-}
-
 // Shorten link container
 
 .link-shorten-container {
@@ -238,34 +172,9 @@ main {
 
 // Blocks with content
 
-.company-stats-container {
-  text-align: center;
-  padding: 2em 0;
-  background-color: #eaeae3;
-  // background-color: $gray;
-}
-
-.company-stats-text {
-  // width: 50%;
-  margin: 0 auto 3.5em auto;
-  padding: 0 2em;
-
-  .company-stats-heading {
-    color: $very-dark-blue;
-    // font-size: 1.75rem;
-    font-size: clamp(1rem, 0.7778rem + 1.1111vw, 1.75rem);
-  }
-  .company-stats-paragraph {
-    color: $grayish-violet;
-    line-height: 1.5;
-    margin-top: 1em;
-    font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
-  }
-}
-
 .company-stats-blocks {
   @include flex-default;
-  flex-direction: column;
+  //flex-direction: column;
   gap: 10px;
   position: relative;
 }
@@ -331,53 +240,6 @@ main {
 }
 
 // Footer section and then go get a cup of tea to calm yourself....
-
-footer {
-  @include flex-default;
-  flex-direction: column;
-  background-color: $very-dark-violet;
-  color: $white;
-  gap: 20px;
-  padding: 1em 0;
-
-  .footer-box-container {
-    @include flex-column;
-    gap: 20px;
-    text-align: center;
-  }
-
-  .footer-box-heading {
-    margin-bottom: 0.5em;
-    letter-spacing: 0.0688rem;
-  }
-
-  .footer-box-link {
-    color: $gray;
-    /* letter-spacing: 1.1px; */
-    padding: 0.2em 2em;
-    font-size: clamp(0.75rem, 0.713rem + 0.1852vw, 0.875rem);
-    // font-size: 0.85rem;
-  }
-
-  .social-list {
-    @include flex-default;
-    @include default-list-style;
-    gap: 30px;
-    .social-list-icon {
-      @extend .social-list;
-      .social-list-icon-link {
-        display: flex;
-        svg path:hover {
-          fill: $cyan; // in order to be able to change the fill of the svgs, I've replaced the img elements with their respective SVG path values. These are found by clicking on the svg file in VS Code, and copying and pasting it into the HTML.
-        }
-      }
-    }
-  }
-
-  .footer-box-list {
-    @include default-list-style;
-  }
-}
 
 // Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
 

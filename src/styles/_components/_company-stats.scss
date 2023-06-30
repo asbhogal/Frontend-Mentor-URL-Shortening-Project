@@ -1,0 +1,26 @@
+@use "../_partials/mixins" as *;
+@use "../_partials/variables" as *;
+
+.company-stats-container {
+  text-align: center;
+  padding: 2em 0;
+  background-color: #eaeae3;
+  // background-color: $gray;
+  .company-stats-text {
+    // width: 50%;
+    margin: 0 auto 3.5em auto;
+    padding: 0 2em;
+
+    .company-stats-heading {
+      color: $very-dark-blue;
+      // font-size: 1.75rem;
+      font-size: clamp(1rem, 0.7778rem + 1.1111vw, 1.75rem);
+    }
+    .company-stats-paragraph {
+      color: $grayish-violet;
+      line-height: 1.5;
+      margin-top: 1em;
+      font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
+    }
+  }
+}

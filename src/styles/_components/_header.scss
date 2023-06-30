@@ -46,6 +46,16 @@
   padding: 0.5em 1em;
   font-size: 1.15rem;
   text-align: center;
+  @include default-list-style;
+  background-color: $dark-violet;
+  user-select: none;
+  color: $white;
+  font-family: $primary-font-family;
+
+  /* & > li,
+  .nav-item-m {
+    @include nav-list-link-spacing;
+  } */ // refactored - see header section
   /* .nav-item {
 		margin-top: 0.5em;
 	} */ // omitted - will be refactored in change to nav list styling (see below)
@@ -53,4 +63,11 @@
 
 .nav-list-secondary {
   list-style-type: none;
+}
+
+.nav-sign-up-btn {
+  @include btn;
+  border-radius: 50px;
+  padding: 0.5em 3em;
+  color: $white;
 }
