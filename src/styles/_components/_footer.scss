@@ -1,6 +1,8 @@
 @use "../_partials/mixins" as *;
 @use "../_partials/variables" as *;
 
+// Footer section and then go get a cup of tea to calm yourself....
+
 footer {
   @include flex-default;
   flex-direction: column;

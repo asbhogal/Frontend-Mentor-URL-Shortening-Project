@@ -35,64 +35,12 @@ main {
 
 // Shorten link container
 
-.link-shorten-container {
-  display: flex;
-  // border: 2px solid red; // omitted to match mockup
-  flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
-  gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
-  background-color: $dark-violet;
-  padding: 1.5em;
-  max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
-  width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
-  //Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
-  width: 90%;
-  margin: 0 auto 0 auto;
-  border-radius: 10px;
-  > * {
-    display: inherit; // ensures all children inherit the flex display property from above
-    //I never thought of this. thank you.
-  }
-  .link-input {
-    // changed to class name for clarity
-    flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
-    width: 80%;
-    padding: 1em 0;
-    text-indent: 10px;
-    border-radius: 10px;
-    &::placeholder {
-      color: var(
-        --color,
-        #757575
-      ); // here we add two parameters to the variable for the color of the placeholder, which is then changed using JS, initially, it has the default color of the placeholder (see script for further notes)
-      // Seen. Also thanks for using this. I had read about how SCSS can be used programatically this way, this is a nice example of that.
-    }
-  }
-
-  .shorten-link-btn {
-    flex: 1 5 auto;
-    border-radius: 10px;
-    @include flex-default;
-    justify-content: center;
-  }
-}
-
 .error {
   display: none;
   position: absolute;
   bottom: 0;
   color: #e73030;
   font-style: italic; // added to match mockup
-}
-
-.shortend-urls-container {
-  margin-top: 6em;
-  font-weight: 100;
-  // So the newest is the first in the list.
-  display: flex;
-  flex-direction: column-reverse;
-  x & * {
-    font-weight: normal;
-  }
 }
 
 .shortend-url {
@@ -132,28 +80,6 @@ main {
   }
 }
 
-.shortend-left-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // To align the link center.
-}
-
-.shortend-right-section {
-  // respective styling for the new section created for the generated URLs
-  //Awesome-potatoes sound good.
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  // I changed this here for the small screen version.
-
-  .btn {
-    max-width: 250px;
-    // I didn't like they way it grew / changed size when changing the window from desktop to mobile. Hmm. Unless, its okay, then my hacky-mess can go :)
-  }
-}
-
 .btn {
   @include btn;
   background-color: $cyan;
@@ -163,11 +89,6 @@ main {
 .shorten-link-btn {
   border-radius: 50px;
   font-family: $primary-font-family;
-}
-
-.get-started-btn {
-  border-radius: 50px;
-  text-decoration: none;
 }
 
 // Blocks with content
@@ -226,20 +147,6 @@ main {
 // For the tree lines, you can add a div called separator and give it some styling (height, width, background-color, position, top.) Set it's display to none for widths greater than or equal to 1000px, and a display of initial for widths less than or equal to 999px (since after this, at 1000px, the content flows horizontal). You will also need to remove the margin value for the .block-item when the content flows vertically (at widths equal to or less than 999px) as this prevents the separator line from 'connecting' between the blocks.
 
 // Boost container
-
-.boost-links-container {
-  @include flex-default;
-  flex-direction: column;
-  color: $white;
-  background-color: $dark-violet;
-  // padding: 1em 0 2em 0;
-
-  h2 {
-    margin: 1em 0;
-  }
-}
-
-// Footer section and then go get a cup of tea to calm yourself....
 
 // Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
 

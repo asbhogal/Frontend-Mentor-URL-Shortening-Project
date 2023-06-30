@@ -1,3 +1,6 @@
+@use "../_partials/mixins" as *;
+@use "../_partials/variables" as *;
+
 .boost-links-container {
   background-image: url(/bg-boost-mobile.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
   background-repeat: no-repeat;
@@ -8,4 +11,16 @@
   font-size: clamp(0.75rem, 0.6019rem + 0.7407vw, 1.125rem);
   //might have made a small miscalculation here.... i cannot remember.
   // ch unit, watched a video of it on Kevin Powells channel. Just testing it. Its nice. -- btw. If my sentences dont make sense, sorry, haven't slept in 24+hrs and blasting NF Happy just doens't help with comprehension. X
+}
+
+.boost-links-container {
+  @include flex-default;
+  flex-direction: column;
+  color: $white;
+  background-color: $dark-violet;
+  // padding: 1em 0 2em 0;
+
+  h2 {
+    margin: 1em 0;
+  }
 }

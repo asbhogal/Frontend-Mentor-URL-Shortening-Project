@@ -8,7 +8,6 @@
   flex-direction: column;
   background-color: $white;
   padding-bottom: 5em;
-
   .hero-image,
   .hero-text {
     width: 100%;
@@ -17,13 +16,11 @@
     flex-direction: column;
     padding: 1em;
     margin-bottom: 2em;
-
     .hero-text-heading {
       color: $very-dark-blue;
       // font-size: 2.5rem;
       font-size: clamp(1.125rem, 0.5694rem + 2.7778vw, 3rem);
     }
-
     .hero-text-paragraph {
       color: $grayish-violet;
       // font-size: 1.125rem;
@@ -38,11 +35,15 @@
 
   .hero-image {
     order: -1;
-
     img {
       display: block;
       margin: 1em auto;
       max-width: 100%;
     }
   }
+}
+
+.get-started-btn {
+  border-radius: 50px;
+  text-decoration: none;
 }
