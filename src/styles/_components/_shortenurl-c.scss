@@ -103,11 +103,10 @@
     // respective styling for the new section created for the generated URLs
     //Awesome-potatoes sound good.
     display: flex;
-    flex-wrap: wrap; // changed to flex-wrap to better handle responsive stacking
     justify-content: center; // ensures when content wraps, it remains central
     align-items: center;
-    gap: 5px;
-    // I changed this here for the small screen version.
+    // gap: 5px;
+    // I changed this here for the small screen version. - I've moved this to show responsively (see responsive stylesheet sheet)
 
     .btn {
       max-width: 250px;

@@ -1,6 +1,16 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
+@media only screen and (max-width: 999px) {
+  .inner-hero-container {
+    flex-direction: column;
+  }
+  .shortend-right-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
 @media only screen and (min-width: 1000px) {
   .boost-links-container {
     background-image: url(/bg-boost-desktop.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
