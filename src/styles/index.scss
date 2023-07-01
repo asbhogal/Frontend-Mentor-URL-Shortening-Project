@@ -1,27 +1,3 @@
 @use "./_partials/" as *;
 @use "./_components/" as *;
 @use "./_partials/responsive" as *;
-
-/* * {
-  font-family: $primary-font-family;
-} */
-
-body {
-  font-family: $primary-font-family;
-  /* max-width: 1400px; // moving this to the main class itself, as this omits the left and right margin
-  width: 100%; */
-  margin: 0 auto;
-}
-
-/* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width. For some reason the margin: 0; which I added to the body isn't therefore working. If it did, this problem shouldn't have happened. I'll look into why it isn't, maybe something I've overlooked */
-
-// I think I understand. It makes sense. But I will think more on your explanation and if I somewhow discover it does not make sense in my head I will ask you to maybe explain it, again, if you dont mind of course.
-
-main {
-  background-color: #eaeae3;
-  margin: 0 auto;
-  max-width: 1440px;
-  width: 100%;
-  // This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
-  //PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
-}

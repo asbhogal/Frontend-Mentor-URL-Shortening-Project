@@ -13,22 +13,6 @@
   transform: translateY(-50%);
 
   // Oh-----it worked. Keywords op. Math, who? Never really got along with her.
-}
-
-.url,
-.input {
-  font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
-}
-
-.error {
-  display: none;
-  position: absolute;
-  bottom: 0;
-  color: #e73030;
-  font-style: italic; // added to match mockup
-}
-
-.link-shorten-container {
   display: flex;
   // border: 2px solid red; // omitted to match mockup
   flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
@@ -62,7 +46,6 @@
       // Seen. Also thanks for using this. I had read about how SCSS can be used programatically this way, this is a nice example of that.
     }
   }
-
   .shorten-link-btn {
     flex: 1 5 auto;
     border-radius: 10px;
@@ -70,6 +53,18 @@
     justify-content: center;
     font-family: $primary-font-family;
   }
+  .error {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    color: #e73030;
+    font-style: italic; // added to match mockup
+  }
+}
+
+.url,
+.input {
+  font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
 }
 
 .shortend-urls-container {
@@ -80,28 +75,6 @@
   flex-direction: column-reverse;
   x & * {
     font-weight: normal;
-  }
-}
-
-.shortend-left-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // To align the link center.
-}
-
-.shortend-right-section {
-  // respective styling for the new section created for the generated URLs
-  //Awesome-potatoes sound good.
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  // I changed this here for the small screen version.
-
-  .btn {
-    max-width: 250px;
-    // I didn't like they way it grew / changed size when changing the window from desktop to mobile. Hmm. Unless, its okay, then my hacky-mess can go :)
   }
 }
 
@@ -119,7 +92,27 @@
   border-radius: 5px; // changed to better reflect mockup
   padding: 0.5em 0;
   text-align: center;
+  .shortend-left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // To align the link center.
+  }
+  .shortend-right-section {
+    // respective styling for the new section created for the generated URLs
+    //Awesome-potatoes sound good.
+    display: flex;
+    flex-wrap: wrap; // changed to flex-wrap to better handle responsive stacking
+    justify-content: center; // ensures when content wraps, it remains central
+    align-items: center;
+    gap: 5px;
+    // I changed this here for the small screen version.
 
+    .btn {
+      max-width: 250px;
+      // I didn't like they way it grew / changed size when changing the window from desktop to mobile. Hmm. Unless, its okay, then my hacky-mess can go :)
+    }
+  }
   .url {
     color: $cyan;
     padding-top: 0.3em;

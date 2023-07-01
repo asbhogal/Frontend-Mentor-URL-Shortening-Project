@@ -8,6 +8,12 @@
   flex-direction: column;
   background-color: $white;
   padding-bottom: 5em;
+  .inner-hero-container {
+    display: inherit;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+  }
   .hero-image,
   .hero-text {
     width: 100%;

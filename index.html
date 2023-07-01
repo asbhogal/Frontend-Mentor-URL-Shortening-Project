@@ -38,21 +38,24 @@
       </header>
 
       <section class="hero-container">
-        <section class="hero-text">
-          <h1 class="hero-text-heading">More than just shorter links</h1>
-          <p class="hero-text-paragraph">
-            Build your brand’s recognition and get detailed insights on how your
-            links are performing.
-          </p>
-          <!-- Not sure if this should be a button or a link. Links go places/ buttons indicate behaviour...this should go somewhere, to a sign-up of sorts, not sure! -->
-          <a class="btn get-started-btn" href="#"> Get Started </a>
-        </section>
-        <section class="hero-image">
-          <img
-            src="/illustration-working.svg"
-            alt="Person working illustration"
-          />
-        </section>
+        <div class="inner-hero-container">
+          <div class="hero-text">
+            <!--changed to div - cannot nest two or more sections - semantically incorrect-->
+            <h1 class="hero-text-heading">More than just shorter links</h1>
+            <p class="hero-text-paragraph">
+              Build your brand’s recognition and get detailed insights on how
+              your links are performing.
+            </p>
+            <!-- Not sure if this should be a button or a link. Links go places/ buttons indicate behaviour...this should go somewhere, to a sign-up of sorts, not sure! -->
+            <a class="btn get-started-btn" href="#"> Get Started </a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="/illustration-working.svg"
+              alt="Person working illustration"
+            />
+          </div>
+        </div>
       </section>
 
       <section class="link-shorten-container">

@@ -1,0 +1,8 @@
+main {
+  background-color: #eaeae3;
+  margin: 0 auto;
+  max-width: 1920px; // I've decided to change this to 1920px. The style guide mentions it looking this way for 1440px, but many common desktop devices go above this, so I think this is justified here to better reflect how it would look on those devices. Subsequently, content structure for the hero section will be changed (this will have a max-width of 1440px to keep it boxed in, but will subsequently require an outer container for this (with the white background) and an inner container holding the two divs next to one another) - see HTML
+  width: 100%;
+  // This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
+  //PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
+}
