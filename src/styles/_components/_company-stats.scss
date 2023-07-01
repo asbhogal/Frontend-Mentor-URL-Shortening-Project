@@ -24,3 +24,58 @@
     }
   }
 }
+
+.company-stats-blocks {
+  @include flex-default;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+// For the tree lines, you can add a div called separator and give it some styling (height, width, background-color, position, top.) Set it's display to none for widths greater than or equal to 1000px, and a display of initial for widths less than or equal to 999px (since after this, at 1000px, the content flows horizontal). You will also need to remove the margin value for the .block-item when the content flows vertically (at widths equal to or less than 999px) as this prevents the separator line from 'connecting' between the blocks.
+
+.seperator {
+  border: 5px solid $cyan;
+  height: 90%;
+  position: absolute;
+}
+
+// Blocks with content
+
+.block-item {
+  background-color: $white;
+  width: 90%;
+  padding: 4em 1em 0.5em 1em;
+  margin: 1em auto;
+  position: relative;
+
+  h3,
+  p {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+    background-color: $white;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 0.8889rem + 0.5556vw, 1.375rem);
+    color: $very-dark-blue;
+  }
+
+  p {
+    color: $gray;
+    line-height: 1.5;
+    font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
+  }
+
+  .block-item-icon {
+    background-color: $dark-violet;
+    padding: 1em;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

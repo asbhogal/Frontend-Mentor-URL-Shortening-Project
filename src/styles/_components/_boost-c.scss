@@ -1,6 +1,8 @@
 @use "../_partials/mixins" as *;
 @use "../_partials/variables" as *;
 
+// Boost container
+
 .boost-links-container {
   background-image: url(/bg-boost-mobile.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
   background-repeat: no-repeat;
