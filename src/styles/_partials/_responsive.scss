@@ -3,10 +3,10 @@
 
 @media only screen and (max-width: 999px) {
   .inner-hero-container {
-    flex-direction: column;
+    flex-direction: column; // added to match mockup
   }
   .shortend-right-section {
-    flex-direction: column;
+    flex-direction: column; // added to match mockup
     gap: 5px;
   }
 }
