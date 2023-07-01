@@ -30,6 +30,12 @@
     cursor: pointer;
     // Added this because its nicer, a que that you can click this. Hope that's alright.
   }
+  .bar {
+    height: 0.1875rem;
+    margin-top: 0.3125rem;
+    width: 1.5625rem;
+    background: $grayish-violet;
+  }
 }
 
 .hidden {

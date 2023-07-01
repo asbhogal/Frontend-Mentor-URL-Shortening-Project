@@ -25,12 +25,3 @@ main {
   // This has been added, because, I discovered that the body with the bg looks freaking weird when above 1400. Very odd. Even I could tell that, now they are all cooped up in here and this container has the background colour. [someone also needs to make an addon that changes all my 'colour' to 'color' so i dont go "Why not work!"
   //PS: this is doing something weird at smaller screens, dont know why, but, I have spent 2-hrs making the calculations for each clamp i added in a notebook to "remember the formula" -- and I am too tired to fix it now -- or even investigate, tomorrow!
 }
-
-.bar {
-  height: 0.1875rem;
-  margin-top: 0.3125rem;
-  width: 1.5625rem;
-  background: $grayish-violet;
-}
-
-// Media Queries || Desktop Version || YOU'RE GETTING LOST MEDIA QUERIES HERE!!!
