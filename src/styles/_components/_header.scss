@@ -12,7 +12,9 @@
   // align-items: center;
   // justify-content: space-between;
   // border: 2px solid magenta; // temporarily omitted
-
+  max-width: 1440px; // added to better reflect mockup
+  width: 100%; // added to better reflect mockup
+  margin: 0 auto; // added to better reflect mockup
   img {
     display: block;
     height: 30px;

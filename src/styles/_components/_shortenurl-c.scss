@@ -68,7 +68,8 @@
 }
 
 .shortend-urls-container {
-  margin-top: 6em;
+  background-color: $pale-violet; // added to better reflect mockup
+  padding-top: 6em; // changed to padding-top to account for the background-color addition
   font-weight: 100;
   // So the newest is the first in the list.
   display: flex;

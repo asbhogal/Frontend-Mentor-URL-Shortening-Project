@@ -4,7 +4,7 @@
 .company-stats-container {
   text-align: center;
   padding: 2em 0;
-  background-color: #eaeae3;
+  background-color: $pale-violet;
   // background-color: $gray;
   .company-stats-text {
     // width: 50%;
@@ -41,6 +41,7 @@
     padding: 4em 1em 0.5em 1em;
     margin: 1em auto;
     position: relative;
+    border-radius: 5px; // added to better reflect mockup
 
     h3,
     p {
