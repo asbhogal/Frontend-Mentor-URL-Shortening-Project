@@ -32,6 +32,10 @@ body {
   @include btn;
   background-color: $cyan;
   color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $pale-cyan; // added to better reflect mockup;
+  }
 }
 
 a {
