@@ -18,6 +18,12 @@
   width: 10px;
 }
 
+.btn {
+  @include btn;
+  background-color: $cyan;
+  color: $white;
+}
+
 a {
   text-decoration: none;
   color: $gray;

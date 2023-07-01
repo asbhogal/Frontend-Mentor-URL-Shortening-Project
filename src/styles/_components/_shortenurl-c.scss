@@ -20,6 +20,14 @@
   font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
 }
 
+.error {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  color: #e73030;
+  font-style: italic; // added to match mockup
+}
+
 .link-shorten-container {
   display: flex;
   // border: 2px solid red; // omitted to match mockup
@@ -39,12 +47,14 @@
   }
   .link-input {
     // changed to class name for clarity
+    font-family: $primary-font-family;
     flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
     width: 80%;
     padding: 1em 0;
     text-indent: 10px;
     border-radius: 10px;
     &::placeholder {
+      font-family: inherit;
       color: var(
         --color,
         #757575
@@ -58,6 +68,7 @@
     border-radius: 10px;
     @include flex-default;
     justify-content: center;
+    font-family: $primary-font-family;
   }
 }
 
@@ -91,5 +102,44 @@
   .btn {
     max-width: 250px;
     // I didn't like they way it grew / changed size when changing the window from desktop to mobile. Hmm. Unless, its okay, then my hacky-mess can go :)
+  }
+}
+
+// Shorten link container
+
+.shortend-url {
+  @include flex-column;
+  background-color: $white;
+  // border: 3px solid pink; // temporarily omitted
+  // Here so I could find it.
+  max-width: 850px;
+  width: 90%;
+  // added a width of 90% because I dont like the boxes touching on small screens.
+  margin: 0.75em auto;
+  border-radius: 5px; // changed to better reflect mockup
+  padding: 0.5em 0;
+  text-align: center;
+
+  .url {
+    color: $cyan;
+    padding-top: 0.3em;
+    border-top: 1px solid $gray;
+    margin: 0.2em 0;
+  }
+
+  .copy-btn {
+    @include flex-default;
+    border-radius: 5px; // changed to better reflect mockup
+    width: 50%;
+    font-weight: 800;
+    font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+    align-self: center;
+    padding: 0.5em 1em;
+    justify-content: center;
+    // border: 2px solid red;
+
+    &:is(:hover, :focus, :active) {
+      cursor: pointer;
+    }
   }
 }
