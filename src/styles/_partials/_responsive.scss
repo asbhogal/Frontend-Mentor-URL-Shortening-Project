@@ -40,6 +40,9 @@
 // the following adds styling for the mobile menu to match the mockup better - a media query is used to ensure it only applies to the mobile menu, as the class name is the same
 @media only screen and (width <= 999px) {
   // this basically says "width is less than or equal to 999px", love these expressions
+  .header-main {
+    height: 95px; // added to match mockups
+  }
   .nav-list,
   .nav-list-secondary {
     display: flex;
@@ -72,12 +75,12 @@
     justify-content: space-between;
     position: relative;
     // border: 4px solid navy; // temporarily omitted
-
+    height: 150px; // added to match mockups
     .nav-list {
       @include flex-default;
-      position: absolute;
+      // position: absolute; - omitted to match mockups - was out of vertical alignment
       // top: 0;
-      top: 10%;
+      // top: 10%; - - omitted to match mockups - was out of vertical alignment
       // I seem to be having a fundamental issue here; I am struggling to undertand the knowledge breakdown. I dont understand why I cannot make this do what I want. -- I will likely not be satisfied with this. I am not. I am confused.
       transform: translateY(-10%);
       right: 120%;
@@ -90,7 +93,9 @@
       font-weight: 700;
       font-size: 1rem;
     }
-
+    .separator {
+      display: none; // ensures that this only shows on the mobile menu - doesn't occupy space in the header on tablet and desktop widths
+    }
     .nav-list-secondary {
       display: flex;
       position: absolute;
