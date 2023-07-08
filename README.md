@@ -6,7 +6,7 @@
 
 A single web page rendered from a series of mockups for the Frontend Mentor challenge which leverages the URL Shortening API to return a condensed version of a user-submitted website address, stores these in the browser's local storage and allows the user to copy these to their clipboard.
 
-This is a pair programming project between <a href="https://github.com/ofthewildfire" target="_blank">ofthewildfire</a> and <a href="https://github.com/asbhogal" target="_blank">@asbhogal</a>, built using HTML5, CSS3, SCSS and JavaScript.
+This is a pair programming project between <a href="https://github.com/ofthewildfire" target="_blank">ofthewildfire</a> and <a href="https://github.com/asbhogal" target="_blank">asbhogal</a>, built using HTML5, CSS3, SCSS and JavaScript.
 
 <strong>:heavy_check_mark: Features:</strong><br>
 
