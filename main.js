@@ -25,7 +25,34 @@ async function callAPI() {
   // const container = document.querySelector(".shortend-urls-container"); omitted as this is declared globally above
 
   // This if statement checks if the url being entered is valid, by using the function declared below and passing in the urlLink (aka input) as the parameter which is used to test against the condition in the function below
+
+  /* if (!checkURL(inputURL)) {
+    // re-incorporated the conditional check to see if the url is valid when tested against the regex expression in the checkURL() function. if it isn't valid, the showErrorStyling() function is called, and the
+    showErrorStyling();
+    return;
+  } */
+
+  const isValidURL = checkURLValidation(inputURL);
+
+  !isValidURL && showErrorStyling(); // this uses the logical && operator to evaluate the first operand (ie. left side of the operator) to see if it is 'truthy'. If it is, it proceeds to parse the right side of the operator. If it is falsy, it does not action the right side, and continues with the callAPI() function
+
+  /* it's basically the equivalent to:
+
+  if (!isValidURL) {
+    showErrorStyling();
+    return;
+  }
+
+  */
+
+  /*
+
+  In the callAPI() function, the result of validateURL(inputURL) is stored in the isValidURL variable. If isValidURL is false, the error styling is applied using showErrorStyling() and the function returns, preventing the callAPI() function from continuing to function. This ensures that the calls are only made when the URL's entered are valid, preventing unnecessary requests.
+  
+  */
+
   try {
+    checkURLValidation(inputURL);
     const response = await fetch(
       `https://api.shrtco.de/v2/shorten?url=${inputURL}/`
     );
@@ -76,6 +103,28 @@ async function callAPI() {
   getHTML();
 }
 
+// Function to test for validity of the url using URL constructor.
+function checkURLValidation(url) {
+  // renamed for greater clarity on the functions purpose
+  const urlPattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/.*)?$/i;
+  return urlPattern.test(url);
+  /* let url;
+
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+
+  return url.protocol === "http:" || url.protocol === "https:"; */
+
+  // when checking the validity of an entry, in this case a URL, it is standard practice to use regular expressions to check if the entry matches a defined pattern which deems it 'acceptable' or not. This uses the test() method and returns a boolean value (true or false) indicating whether the string is a valid URL according to the pattern.
+
+  // regex is difficult to understand at first - I'll send you notes about it in detail, which should (hopefully) help with the side studying in it (if you haven't started regex yet, I can send you a good freeCodeCamp tutorial)
+
+  // I literally cannot even understand that url pattern. I dont know what I am looking at there. So, that info will be helpful, I will begin the process just as soon as I finish typing this pointless sentence of course.
+}
+
 /// Clipboard API
 // Text copying.
 const urlBoxContainer = document.querySelector(".shortend-urls-container");
@@ -100,30 +149,6 @@ urlBoxContainer.addEventListener("click", (event) => {
   }
 });
 
-// Function to test for validity of the url using URL constructor.
-
-function checkURL(string) {
-  /* let url;
-
-  try {
-    url = new URL(string);
-  } catch (_) {
-    return false;
-  }
-
-  return url.protocol === "http:" || url.protocol === "https:"; */
-
-  const urlPattern = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/.*)?$/i;
-  return urlPattern.test(string);
-
-  // when checking the validity of an entry, in this case a URL, it is standard practice to use regular expressions to check if the entry matches a defined pattern which deems it 'acceptable' or not. This uses the test() method and returns a boolean value (true or false) indicating whether the string is a valid URL according to the pattern.
-
-  // regex is difficult to understand at first - I'll send you notes about it in detail, which should (hopefully) help with the side studying in it (if you haven't started regex yet, I can send you a good freeCodeCamp tutorial)
-
-  // I literally cannot even understand that url pattern. I dont know what I am looking at there. So, that info will be helpful, I will begin the process just as soon as I finish typing this pointless sentence of course.
-}
-
-//
 function linksInStorage(link) {
   let linkHistory = JSON.parse(localStorage.getItem("linkies")) || [];
   linkHistory.push(link);
@@ -156,9 +181,19 @@ function getHTMLTemplate(original, short) {
 			`;
 }
 
-// the function getHTMLTemplate() above accepts the 'original' and 'short' parameters passed to it from the 'try' block and returns the template containing the original and shortened values
+/* 
 
-// I've modified the html content above for the getHTML() function to match the mockup better. The respective styling is in the index.scss file (this will likely change location as I move things around).
+The function getHTMLTemplate() above accepts the 'original' and 'short' parameters passed to it from the 'try' block and returns the template containing the original and shortened values. This is called in two places:
+
+1. In the callAPI() function - getURLTemplate(inputURL, urlLink) is used to generate the HTML template for the new URL entry. This template is then appended to the container element using container.innerHTML += getURLTemplate(inputURL, urlLink).
+
+2. In the getHTML() function - for each entry using forEach(), the function calls getURLTemplate(item.original, item.short) to generate the corresponding HTML template. The generated HTML templates are concatenated together to form a single string, which is then returned as the HTML content for the container.
+
+This means we only have to code the HTML template once and call it in these two places, ensuring consistency (as opposed to two separate templates which may have discrepancies), both when a new shortened URL is added and when the HTML is updated based on the stored URLs
+
+*/
+
+// OLD NOTE - I've modified the html content above for the getHTML() function to match the mockup better. The respective styling is in the index.scss file (this will likely change location as I move things around).
 
 // the button text for the getHTML() and callAPI() functions have been altered to better reflect mockup
 
