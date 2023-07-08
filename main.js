@@ -10,14 +10,14 @@ container.innerHTML = getHTML();
 // Event listeners
 shortenLinkBtn.addEventListener("click", callAPI);
 linkInput.addEventListener("keyup", function (e) {
-  // added an event listener for when the user presses 'enter' on their keyboard - a common UX feature. This listens for the respective key value for the enter button, then calls the function callAPI
-  e.keyCode === 13 && (e.preventDefault(), callAPI());
+  e.keyCode === 13 && (e.preventDefault(), callAPI()); // added an event listener for when the user presses 'enter' on their keyboard - a common UX feature. This listens for the respective key value for the enter button, then calls the function callAPI
 });
 hamburgerMenu.addEventListener("click", function () {
   const navList = document.querySelector(".nav-list");
-  navList.classList.toggle("hidden");
-  // A much cleaner way is to use the toggle() function to toggle the "hidden" class of the ".nav-list". If the class is present,it will be removed. if it isn't present, it will be added.
+  navList.classList.toggle("hidden"); // A much cleaner way is to use the toggle() function to toggle the "hidden" class of the ".nav-list". If the class is present,it will be removed. if it isn't present, it will be added.
 });
+
+linkInput.addEventListener("input", resetErrorStyling); // an event listener I've added which watches for input changes on the linkInput then runs the resetErrorStyling function (manually added - see below)
 
 // The API.
 async function callAPI() {
@@ -33,11 +33,16 @@ async function callAPI() {
     const urlLink = `https://www.${data.result.short_link}`; // replaced concatenated string value with template literals for ES6 consistency
     const urlPackage = { original: inputURL, short: urlLink };
 
-    //
-    document.querySelector(".error").style.display = "none";
-    document.querySelector("#url-input").style.border = "2px solid green";
+    // document.querySelector(".error").style.display = "none";
+    // document.querySelector("#url-input").style.border = "2px solid green";
 
-    container.innerHTML += `
+    // above styling omitted as these have been moved to the function removeErrorStyling()
+
+    resetErrorStyling(); // see below for this function
+
+    container.innerHTML += getHTMLTemplate(inputURL, urlLink);
+
+    /* container.innerHTML += `
 		<div class="shortend-url">
         	<div class="shortend-left-section">
 				<a class="input">${inputURL}</a>
@@ -46,8 +51,9 @@ async function callAPI() {
           		<a class="url">${urlLink}</a>
           			<button class="btn copy-btn">Copy</button>
         	</div>
-		</div>
-				`; // updated this to match the template in the getHTML() function below (so both stored links and new generated ones follow the same styling)
+		</div>`; */ // omitted as this template will be combined with the one below into a function called getHTMLTemplate() which handles both the inputURL and urlLink as parameters, to avoid duplication of the HMTL template - see below
+
+    // updated this to match the template in the getHTML() function below (so both stored links and new generated ones follow the same styling)
 
     // changed the h2 content to a tags to make them more semantically correct - should avoid multiple h2 tags and use them for subheadings
 
@@ -55,13 +61,14 @@ async function callAPI() {
   } catch (err) {
     console.log(err); // added logging the error to console - will also help with debugging
     // err = "Sorry, not sure what happened there!"; // omitted as doesn't show in the console log
-    document.querySelector(".error").style.display = "block";
-    document.querySelector("#url-input").style.border = "2px solid red";
-    document
-      .querySelector("#url-input")
-      .style.setProperty("--color", "#f46262");
+    // document.querySelector(".error").style.display = "block";
+    // document.querySelector("#url-input").style.border = "2px solid red";
+    // document.querySelector("#url-input") .style.setProperty("--color", "#f46262");
     // when the catch is run, the --color variable is passed red for the placeholder text
     // Oh, I have never seen this before. Very cool.
+
+    // all three styling above have been omitted and subsequently added to the function showErrorStyling() - see below
+    showErrorStyling();
   } // temporarily removed if-else as code inside wasn't running. Will review this - this function is therefore likely to change in future commits
 
   // Clear the input box
@@ -129,24 +136,52 @@ function getHTML() {
   let html = "";
   content.forEach((item) => {
     if (item) {
-      html += `
-        <div class="shortend-url">
-        	<div class="shortend-left-section">
-			<a class="input">${item.original}</a>
-          </div>
-          <div class="shortend-right-section">
-			<a class="url">${item.short}</a>
-			<button class="btn copy-btn"> Copy </button>
-          </div>
-		</div>
-			`;
+      html += getHTMLTemplate(item.original, item.short);
     }
   });
   return html;
 }
+
+function getHTMLTemplate(original, short) {
+  return `
+        <div class="shortend-url">
+        	<div class="shortend-left-section">
+			<a class="input">${original}</a>
+          </div>
+          <div class="shortend-right-section">
+			<a class="url">${short}</a>
+			<button class="btn copy-btn"> Copy </button>
+          </div>
+		</div>
+			`;
+}
+
+// the function getHTMLTemplate() above accepts the 'original' and 'short' parameters passed to it from the 'try' block and returns the template containing the original and shortened values
 
 // I've modified the html content above for the getHTML() function to match the mockup better. The respective styling is in the index.scss file (this will likely change location as I move things around).
 
 // the button text for the getHTML() and callAPI() functions have been altered to better reflect mockup
 
 // changed the h2 content to a tags to make them more semantically correct - should avoid multiple h2 tags and use them for subheadings
+
+function resetErrorStyling() {
+  const errorElement = document.querySelector(".error");
+  const urlInputElement = document.querySelector("#url-input");
+
+  errorElement.style.display = "none";
+  urlInputElement.style.border = "2px solid green";
+  urlInputElement.style.removeProperty("--color");
+}
+
+// the function above, when called resets the error styling. This uses the styling you previously added further up in the try segment of the async-await call, it's just been moved to this function to keep the code more modular and maintainable. The third line removes the color property that's added to the placeholder text (ie. the red color) and subsequently defaults it back to the original placeholder color value
+
+function showErrorStyling() {
+  const errorElement = document.querySelector(".error");
+  const urlInputElement = document.querySelector("#url-input");
+
+  errorElement.style.display = "block";
+  urlInputElement.style.border = "2px solid red";
+  urlInputElement.style.setProperty("--color", "#f46262");
+}
+
+// this function does the opposite to the one above - it sets the relevant styling to the input when an invalid URL is entered, or when an empty value is attempted to be submitted. This takes the styling you applied in the 'catch' section of the callAPI() function and moves it here
