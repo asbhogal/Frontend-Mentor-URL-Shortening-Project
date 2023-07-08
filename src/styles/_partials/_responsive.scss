@@ -43,6 +43,9 @@
   .header-main {
     height: 95px; // added to match mockups
   }
+  .hamburger-menu {
+    @include flex-column; // ensures this only appears on smaller devices
+  }
   .nav-list,
   .nav-list-secondary {
     display: flex;

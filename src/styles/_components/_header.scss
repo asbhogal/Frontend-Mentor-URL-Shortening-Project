@@ -20,7 +20,7 @@
     height: 30px;
   }
   .hamburger-menu {
-    @include flex-column;
+    // @include flex-column; // omitted to ensure this only shows on smaller-width devices (see responsive stylesheet)
     position: absolute;
     top: 50%;
     left: 85%;
