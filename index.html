@@ -27,12 +27,12 @@
             <div class="separator"></div>
             <!-- added this separator for the mobile menu to match mockup - will only show then -->
             <!-- According to MDN I can do this:  -->
-            <ul class="nav-list-secondary">
-              <li class="nav-item-m">Login</li>
-              <li class="nav-item-m">
-                <a class="nav-sign-up-btn" href="#">Sign up</a>
-              </li>
-            </ul>
+          </ul>
+          <ul class="nav-list-secondary hidden nav-list">
+            <li class="nav-item-m">Login</li>
+            <li class="nav-item-m">
+              <a class="nav-sign-up-btn" href="#">Sign up</a>
+            </li>
           </ul>
         </div>
       </header>
@@ -146,7 +146,7 @@
           <!--MOVED IMG INSIDE TO MANAGE PARENT CONTAINER WIDTH-->
           <div class="footer-links-container">
             <div class="footer-box">
-              <h4 class="footer-box-heading">Features</h4>
+              <span class="footer-box-heading">Features</span>
               <ul class="footer-box-list">
                 <li class="footer-box-link">
                   <a href="#" target="_blank">Link Shortening</a>
@@ -161,7 +161,7 @@
             </div>
             <!--  -->
             <div class="footer-box">
-              <h4 class="footer-box-heading">Resources</h4>
+              <span class="footer-box-heading">Resources</soan>
               <ul class="footer-box-list">
                 <li class="footer-box-link">
                   <a href="#" target="_blank">Blog</a>
@@ -176,7 +176,7 @@
             </div>
             <!--  -->
             <div class="footer-box">
-              <h4 class="footer-box-heading">Company</h4>
+              <span class="footer-box-heading">Company</span>
               <ul class="footer-box-list">
                 <li class="footer-box-link">
                   <a href="#" target="_blank">About</a>
@@ -197,7 +197,7 @@
             <!--changed to div - cannot nest two or more sections - semantically incorrect, will send a linkie-->
             <ul class="social-list">
               <li class="social-list-icon">
-                <a class="social-list-icon-link" href="#" target="_blank">
+                <a class="social-list-icon-link" href="#" target="_blank" aria-label="Link to Facebook profile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -211,7 +211,7 @@
                 </a>
               </li>
               <li class="social-list-icon">
-                <a class="social-list-icon-link" href="#" target="_blank">
+                <a class="social-list-icon-link" href="#" target="_blank" aria-label="Link to Twitter profile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -225,7 +225,7 @@
                 </a>
               </li>
               <li class="social-list-icon">
-                <a class="social-list-icon-link" href="#" target="_blank">
+                <a class="social-list-icon-link" href="#" target="_blank" aria-label="Link to Pinterest profile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -239,7 +239,7 @@
                 </a>
               </li>
               <li class="social-list-icon">
-                <a class="social-list-icon-link" href="#" target="_blank">
+                <a class="social-list-icon-link" href="#" target="_blank" aria-label="Link to Instagram profile">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
