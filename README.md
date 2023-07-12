@@ -2,6 +2,8 @@
 
 <h1>URL Shortening Page - Pair Programming Project</h1>
 
+![GitHub deployments](https://img.shields.io/github/deployments/asbhogal/Frontend-Mentor-URL-Shortening-Project/production?label=DEPLOYMENT%20STATE&style=for-the-badge&labelColor=000) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/asbhogal/Frontend-Mentor-URL-Shortening-Project?style=for-the-badge&labelColor=000) ![GitHub repo size](https://img.shields.io/github/repo-size/asbhogal/Frontend-Mentor-URL-Shortening-Project?color=blueviolet&style=for-the-badge&labelColor=000)
+
 </div>
 
 A single web page rendered from a series of mockups for the Frontend Mentor challenge which leverages the URL Shortening API to return a condensed version of a user-submitted website address, stores these in the browser's local storage and allows the user to copy these to their clipboard. Regex has also been used to check whether the URL entered is valid.
