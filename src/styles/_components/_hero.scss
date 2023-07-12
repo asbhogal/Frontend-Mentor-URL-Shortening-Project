@@ -1,0 +1,55 @@
+@use "../_partials/mixins" as *;
+@use "../_partials/variables" as *;
+
+// Hero Section
+
+.hero-container {
+  @include flex-default;
+  flex-direction: column;
+  background-color: $white;
+  padding-bottom: 5em;
+  .inner-hero-container {
+    display: inherit;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-image,
+  .hero-text {
+    width: 100%;
+    text-align: center;
+    @include flex-default;
+    flex-direction: column;
+    padding: 1em;
+    // margin-bottom: 2em; // omitted to better reflext mockup
+    .hero-text-heading {
+      color: $very-dark-blue;
+      // font-size: 2.5rem;
+      font-size: clamp(1.125rem, 0.5694rem + 2.7778vw, 3rem);
+    }
+    .hero-text-paragraph {
+      color: $grayish-violet;
+      // font-size: 1.125rem;
+      font-size: clamp(1rem, 0.9111rem + 0.4444vw, 1.3rem);
+      line-height: 1.5;
+    }
+  }
+
+  .hero-text * {
+    margin-top: 1em;
+  }
+
+  .hero-image {
+    order: -1;
+    img {
+      display: block;
+      margin: 1em auto;
+      max-width: 100%;
+    }
+  }
+}
+
+.get-started-btn {
+  border-radius: 50px;
+  text-decoration: none;
+}

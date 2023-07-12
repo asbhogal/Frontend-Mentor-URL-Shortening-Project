@@ -1,0 +1,80 @@
+@use "../_partials/variables" as *;
+@use "../_partials/mixins" as *;
+
+.header-main {
+  @include flex-default;
+  // Am I blind or is this literally doing nothing here? :/ I am so confused, I dont have enough cookie in my system for this....
+  background-color: $white;
+  position: relative;
+  padding: 1em;
+  height: 60px;
+  // max-height: 80px;
+  // align-items: center;
+  // justify-content: space-between;
+  // border: 2px solid magenta; // temporarily omitted
+  max-width: 1440px; // added to better reflect mockup
+  width: 100%; // added to better reflect mockup
+  margin: 0 auto; // added to better reflect mockup
+  img {
+    display: block;
+    height: 30px;
+  }
+  .hamburger-menu {
+    // @include flex-column; // omitted to ensure this only shows on smaller-width devices (see responsive stylesheet)
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translateY(-50%);
+
+    &:is(:hover, :active, :focus) {
+      cursor: pointer;
+      // Added this because its nicer, a que that you can click this. Hope that's alright.
+    }
+    .bar {
+      height: 0.1875rem;
+      margin-top: 0.3125rem;
+      width: 1.5625rem;
+      background: $grayish-violet;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.nav-list {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  width: 85%;
+  padding: 0.5em 1em;
+  font-size: 1.15rem;
+  text-align: center;
+  @include default-list-style;
+  background-color: $dark-violet;
+  user-select: none;
+  color: $white;
+  font-family: $primary-font-family;
+
+  /* & > li,
+  .nav-item-m {
+    @include nav-list-link-spacing;
+  } */ // refactored - see header section
+  /* .nav-item {
+		margin-top: 0.5em;
+	} */ // omitted - will be refactored in change to nav list styling (see below)
+}
+
+.nav-list-secondary {
+  list-style-type: none;
+}
+
+.nav-sign-up-btn {
+  @include btn;
+  border-radius: 50px;
+  padding: 0.5em 3em;
+  color: $white;
+}

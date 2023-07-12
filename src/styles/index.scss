@@ -1,4 +1,3 @@
-@use "./_partials/globals" as *;
-@use "./_partials/mixins" as *;
-@use "./_partials/typography" as *;
-@use "./_partials/variables" as *;
+@use "./_partials/" as *;
+@use "./_components/" as *;
+@use "./_partials/responsive" as *;

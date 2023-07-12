@@ -1,0 +1,51 @@
+@use "../_partials/mixins" as *;
+@use "../_partials/variables" as *;
+
+// Footer section and then go get a cup of tea to calm yourself....
+
+footer {
+  @include flex-default;
+  flex-direction: column;
+  background-color: $very-dark-violet;
+  color: $white;
+  gap: 20px;
+  padding: 1em 0;
+
+  .footer-box-container {
+    @include flex-column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-box-heading {
+    margin-bottom: 0.5em;
+    letter-spacing: 0.0688rem;
+  }
+
+  .footer-box-link {
+    color: $gray;
+    /* letter-spacing: 1.1px; */
+    padding: 0.2em 2em;
+    font-size: clamp(0.75rem, 0.713rem + 0.1852vw, 0.875rem);
+    // font-size: 0.85rem;
+  }
+
+  .social-list {
+    @include flex-default;
+    @include default-list-style;
+    gap: 30px;
+    .social-list-icon {
+      @extend .social-list;
+      .social-list-icon-link {
+        display: flex;
+        svg path:hover {
+          fill: $cyan; // in order to be able to change the fill of the svgs, I've replaced the img elements with their respective SVG path values. These are found by clicking on the svg file in VS Code, and copying and pasting it into the HTML.
+        }
+      }
+    }
+  }
+
+  .footer-box-list {
+    @include default-list-style;
+  }
+}

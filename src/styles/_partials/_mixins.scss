@@ -1,9 +1,42 @@
 @use "./variables" as *;
 
-@mixin font-styling {
-  color: $red;
+@mixin flex-default {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#app {
-  @include font-styling;
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  place-content: center center;
+}
+
+@mixin font-styling {
+  color: $cyan;
+}
+
+@mixin default-list-style {
+  list-style-type: none;
+  // padding-left: 0; // omitted as this was causing elements to fix to the left, leaving a gap on the right
+
+  & > li {
+    line-height: 1.5;
+
+    & + ul {
+      list-style-type: none;
+    }
+  }
+}
+
+@mixin nav-list-link-spacing {
+  margin: 0.75em 0;
+}
+
+@mixin btn {
+  padding: 1em 2em;
+  text-decoration: none;
+  background-color: $cyan;
+  cursor: pointer;
 }

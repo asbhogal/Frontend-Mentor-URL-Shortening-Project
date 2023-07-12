@@ -1,0 +1,54 @@
+@use "./mixins" as *;
+@use "./typography" as *;
+@use "./variables" as *;
+@use "../_components/header" as *;
+
+/* * {
+  font-family: $primary-font-family;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  // outline: 0.0625rem solid red;
+  &:is(&::after, &::before, *) {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: $primary-font-family;
+  /* max-width: 1400px; // moving this to the main class itself, as this omits the left and right margin
+  width: 100%; */
+  margin: 0 auto;
+}
+
+/* Explaining the above in further detail: adding the properties to the body means the browser by default is adding some margin on top. When you add it to the child container (in this case, main), then this isn't accounted for and the container just inherits the body (parent) width. For some reason the margin: 0; which I added to the body isn't therefore working. If it did, this problem shouldn't have happened. I'll look into why it isn't, maybe something I've overlooked */
+
+// I think I understand. It makes sense. But I will think more on your explanation and if I somewhow discover it does not make sense in my head I will ask you to maybe explain it, again, if you dont mind of course.
+
+.btn {
+  @include btn;
+  background-color: $cyan;
+  color: $white;
+  font-weight: 700;
+  &:hover {
+    background-color: $pale-cyan; // added to better reflect mockup;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $gray;
+}
+
+.input {
+  color: $very-dark-blue;
+  font-weight: 400;
+  margin: 0.5em;
+}
+
+.url {
+  font-weight: 400;
+}

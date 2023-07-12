@@ -1,0 +1,138 @@
+@use "../_partials/variables" as *;
+@use "../_partials/mixins" as *;
+
+.link-shorten-container {
+  background-image: url(/bg-shorten-mobile.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
+  background-repeat: no-repeat;
+  background-position: top right;
+  position: absolute;
+  //
+  left: 0;
+  right: 0;
+  // transform: translateX(-0%); // omitted as has no effect (X value is 0% by default unless explicitly set to something else)
+  transform: translateY(-50%);
+
+  // Oh-----it worked. Keywords op. Math, who? Never really got along with her.
+  display: flex;
+  // border: 2px solid red; // omitted to match mockup
+  flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
+  gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
+  background-color: $dark-violet;
+  padding: 1.5em;
+  max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
+  width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
+  //Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
+  width: 90%;
+  margin: 0 auto 0 auto;
+  border-radius: 10px;
+  > * {
+    display: inherit; // ensures all children inherit the flex display property from above
+    //I never thought of this. thank you.
+  }
+  .link-input {
+    // changed to class name for clarity
+    font-family: $primary-font-family;
+    flex: 1 1 auto; // this is short-hand for: flex-grow | flex-shrink | flex-basis - I'll send you some info on this
+    width: 80%;
+    padding: 1em 0;
+    text-indent: 10px;
+    border-radius: 10px;
+    &::placeholder {
+      font-family: inherit;
+      color: var(
+        --color,
+        #757575
+      ); // here we add two parameters to the variable for the color of the placeholder, which is then changed using JS, initially, it has the default color of the placeholder (see script for further notes)
+      // Seen. Also thanks for using this. I had read about how SCSS can be used programatically this way, this is a nice example of that.
+    }
+  }
+  .shorten-link-btn {
+    flex: 1 5 auto;
+    border-radius: 10px;
+    @include flex-default;
+    justify-content: center;
+    font-family: $primary-font-family;
+  }
+  .error {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    color: #e73030;
+    font-style: italic; // added to match mockup
+  }
+}
+
+.url,
+.input {
+  font-size: clamp(1rem, 0.9259rem + 0.3704vw, 1.25rem);
+}
+
+.shortend-urls-container {
+  background-color: $pale-violet; // added to better reflect mockup
+  padding-top: 6em; // changed to padding-top to account for the background-color addition
+  font-weight: 100;
+  // So the newest is the first in the list.
+  display: flex;
+  flex-direction: column-reverse;
+  x & * {
+    font-weight: normal;
+  }
+}
+
+// Shorten link container
+
+.shortend-url {
+  @include flex-column;
+  background-color: $white;
+  // border: 3px solid pink; // temporarily omitted
+  // Here so I could find it.
+  max-width: 850px;
+  width: 90%;
+  // added a width of 90% because I dont like the boxes touching on small screens.
+  margin: 0.75em auto;
+  border-radius: 5px; // changed to better reflect mockup
+  padding: 0.5em 0;
+  text-align: center;
+  .shortend-left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // To align the link center.
+  }
+  .shortend-right-section {
+    // respective styling for the new section created for the generated URLs
+    //Awesome-potatoes sound good.
+    display: flex;
+    justify-content: center; // ensures when content wraps, it remains central
+    align-items: center;
+    // gap: 5px;
+    // I changed this here for the small screen version. - I've moved this to show responsively (see responsive stylesheet sheet)
+
+    .btn {
+      max-width: 250px;
+      // I didn't like they way it grew / changed size when changing the window from desktop to mobile. Hmm. Unless, its okay, then my hacky-mess can go :)
+    }
+  }
+  .url {
+    color: $cyan;
+    padding-top: 0.3em;
+    border-top: 1px solid $gray;
+    margin: 0.2em 0;
+  }
+
+  .copy-btn {
+    @include flex-default;
+    border-radius: 5px; // changed to better reflect mockup
+    width: 50%;
+    font-weight: 800;
+    font-size: clamp(1rem, 0.963rem + 0.1852vw, 1.125rem);
+    align-self: center;
+    padding: 0.5em 1em;
+    justify-content: center;
+    // border: 2px solid red;
+
+    &:is(:hover, :focus, :active) {
+      cursor: pointer;
+    }
+  }
+}
