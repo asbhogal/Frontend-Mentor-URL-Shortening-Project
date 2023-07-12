@@ -27,3 +27,6 @@ This is a pair programming project between <a href="https://github.com/ofthewild
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg"><img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" alt="sass logo" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg"><img src="https://github.com/devicons/devicon/raw/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="50" height="50" style="max-width:100%;"></a>
 <a target="_blank" rel="noopener noreferrer" href="https://github.com/vitejs/vite/blob/main/docs/public/logo.svg"><img src="https://github.com/vitejs/vite/blob/main/docs/public/logo.svg" alt="Vite logo" width="50" height="50" style="max-width:100%;"></a>
+
+<strong>Links :chain:</strong><br>
+ - <a target="_blank" href="https://frontend-mentor-url-shortening-project.vercel.app/">URL Shortening Page</a>
