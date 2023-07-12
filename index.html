@@ -21,9 +21,9 @@
         </div>
         <div class="nav-container">
           <ul class="nav-list hidden">
-            <li class="nav-item">Features</li>
-            <li class="nav-item">Pricing</li>
-            <li class="nav-item">Resources</li>
+            <li class="nav-item"><a target="_blank" href="#">Features</a></li>
+            <li class="nav-item"><a target="_blank" href="#">Pricing</a></li>
+            <li class="nav-item"><a target="_blank" href="#">Resources</a></li>
             <div class="separator"></div>
             <!-- added this separator for the mobile menu to match mockup - will only show then -->
             <!-- According to MDN I can do this:  -->
@@ -141,54 +141,57 @@
       <!-- Footer -->
 
       <footer>
-        <img class="footer-logo" src="/footer_logo.svg" alt="Footer logo" />
         <section class="footer-box-container">
-          <div class="footer-box">
-            <h4 class="footer-box-heading">Features</h4>
-            <ul class="footer-box-list">
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Link Shortening</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Branded Links</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Analytics</a>
-              </li>
-            </ul>
-          </div>
-          <!--  -->
-          <div class="footer-box">
-            <h4 class="footer-box-heading">Resources</h4>
-            <ul class="footer-box-list">
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Blog</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Developers</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Support</a>
-              </li>
-            </ul>
-          </div>
-          <!--  -->
-          <div class="footer-box">
-            <h4 class="footer-box-heading">Company</h4>
-            <ul class="footer-box-list">
-              <li class="footer-box-link">
-                <a href="#" target="_blank">About</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Our Team</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Careers</a>
-              </li>
-              <li class="footer-box-link">
-                <a href="#" target="_blank">Contact</a>
-              </li>
-            </ul>
+          <img class="footer-logo" src="/footer_logo.svg" alt="Footer logo" />
+          <!--MOVED IMG INSIDE TO MANAGE PARENT CONTAINER WIDTH-->
+          <div class="footer-links-container">
+            <div class="footer-box">
+              <h4 class="footer-box-heading">Features</h4>
+              <ul class="footer-box-list">
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Link Shortening</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Branded Links</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Analytics</a>
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div class="footer-box">
+              <h4 class="footer-box-heading">Resources</h4>
+              <ul class="footer-box-list">
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Blog</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Developers</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Support</a>
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div class="footer-box">
+              <h4 class="footer-box-heading">Company</h4>
+              <ul class="footer-box-list">
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">About</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Our Team</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Careers</a>
+                </li>
+                <li class="footer-box-link">
+                  <a href="#" target="_blank">Contact</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="footer-socials">
             <!--changed to div - cannot nest two or more sections - semantically incorrect, will send a linkie-->

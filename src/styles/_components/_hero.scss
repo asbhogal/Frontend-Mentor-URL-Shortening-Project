@@ -10,7 +10,7 @@
   padding-bottom: 5em;
   .inner-hero-container {
     display: inherit;
-    max-width: 1440px;
+    max-width: 1130px; // reduced to better match mockup
     width: 100%;
     margin: 0 auto;
   }
@@ -20,8 +20,8 @@
     text-align: center;
     @include flex-default;
     flex-direction: column;
-    padding: 1em;
-    // margin-bottom: 2em; // omitted to better reflext mockup
+    // padding: 1em; // reduced to better match mockup
+    // margin-bottom: 2em; // omitted to better reflect mockup
     .hero-text-heading {
       color: $very-dark-blue;
       // font-size: 2.5rem;

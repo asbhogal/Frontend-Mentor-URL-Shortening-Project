@@ -70,6 +70,16 @@
   .nav-list.hidden {
     display: none;
   }
+  .footer-logo {
+    margin: 0 auto; // added to centralise after footer structure changes
+  }
+  .footer-links-container {
+    flex-direction: column; // added to match mockups after footer structure changes
+  }
+  .social-list {
+    width: 200px; // added to match mockups after footer structure changes
+    margin: 0 auto; // added to centralise after footer structure changes
+  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -125,7 +135,7 @@
     .hero-text {
       width: 100%;
       @include flex-column;
-      padding: 1em 5em;
+      // padding: 1em 5em; // omitted to match mockups - padding is now absorbed into parent container as a max-width, allowing for consistent values across different divs
 
       .hero-text-heading {
         // font-size: 3rem;
@@ -188,7 +198,7 @@
     @include flex-default;
     position: relative;
     gap: 40px;
-    padding: 0 5em;
+    // padding: 0 5em;
 
     .block-item {
       @include flex-column;
@@ -254,13 +264,13 @@
   footer {
     @include flex-default;
     align-items: flex-start;
-    padding: 5em;
+    padding: 5em 0; // changed as left and right will be managed by max-width (to better match mockups and keep page content at same values)
 
     .footer-box-container {
       @include flex-default;
       align-items: flex-start;
       justify-content: space-between;
-      width: 70%;
+      // width: 70%; // omitted as width is now handled by max-width values in footer stylesheet
       text-align: left;
 
       .footer-box-link {

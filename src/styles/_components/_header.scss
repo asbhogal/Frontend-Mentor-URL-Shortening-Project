@@ -6,13 +6,13 @@
   // Am I blind or is this literally doing nothing here? :/ I am so confused, I dont have enough cookie in my system for this....
   background-color: $white;
   position: relative;
-  padding: 1em;
+  // padding: 1em; // omitted to match mockups - padding is now absorbed into parent container as a max-width, allowing for consistent values across different divs
   height: 60px;
   // max-height: 80px;
   // align-items: center;
   // justify-content: space-between;
   // border: 2px solid magenta; // temporarily omitted
-  max-width: 1440px; // added to better reflect mockup
+  max-width: 1130px; // added to better reflect mockup
   width: 100%; // added to better reflect mockup
   margin: 0 auto; // added to better reflect mockup
   img {
@@ -58,7 +58,11 @@
   user-select: none;
   color: $white;
   font-family: $primary-font-family;
-
+  .nav-item > a {
+    &:hover {
+      color: $very-dark-blue;
+    }
+  }
   /* & > li,
   .nav-item-m {
     @include nav-list-link-spacing;
