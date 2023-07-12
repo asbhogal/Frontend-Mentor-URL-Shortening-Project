@@ -36,9 +36,12 @@
     align-items: center;
   }
   .footer-links-container {
-    width: 100%; // added to better reflect mockup - see comments in footer stylesheet
-    justify-content: flex-end; // added to better reflect mockup - see comments in footer stylesheet
-    gap: 75px; // added to better reflect mockup - see comments in footer stylesheet
+    width: 100%; // added to better reflect mockup
+    justify-content: flex-end; // added to better reflect mockup
+    gap: 75px; // added to better reflect mockup
+  }
+  .footer-box-container {
+    gap: 50px; // added to better match mockup
   }
 }
 
@@ -86,6 +89,10 @@
   }
   .footer-links-container {
     flex-direction: column; // added to match mockups after footer structure changes
+    gap: 30px;
+  }
+  .footer-box-container {
+    gap: 40px; // added to match mockups after footer structure changes
   }
   .social-list {
     width: 200px; // added to match mockups after footer structure changes
