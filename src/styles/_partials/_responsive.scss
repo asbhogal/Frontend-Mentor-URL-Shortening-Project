@@ -57,6 +57,12 @@
     flex-direction: column;
     gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
     // I must say, it was like a treasure hunt, finding the nav items. (:
+    position: absolute;
+    top: 100px;
+    margin: 0 auto;
+    width: 80%;
+    height: fit-content;
+    left: 10%;
     .nav-item,
     .nav-item-m {
       font-weight: 900;
@@ -90,21 +96,23 @@
 @media screen and (min-width: 1000px) {
   .header-main {
     @include flex-default;
+    gap: 30px;
     justify-content: space-between;
     position: relative;
     // border: 4px solid navy; // temporarily omitted
     height: 150px; // added to match mockups
     .nav-list {
       @include flex-default;
+      gap: 30px;
       // position: absolute; - omitted to match mockups - was out of vertical alignment
       // top: 0;
       // top: 10%; - - omitted to match mockups - was out of vertical alignment
       // I seem to be having a fundamental issue here; I am struggling to undertand the knowledge breakdown. I dont understand why I cannot make this do what I want. -- I will likely not be satisfied with this. I am not. I am confused.
-      transform: translateY(-10%);
-      right: 120%;
-      transform: translateX(-120%);
+      // transform: translateY(-10%); // omitted as changing styles due to secondary ul list move
+      // right: 120%; // omitted as changing styles due to secondary ul list move
+      // transform: translateX(-120%); // omitted as changing styles due to secondary ul list move
       background-color: transparent;
-      width: 30%;
+      // width: 30%; // omitted as changing styles due to secondary ul list move
       border-radius: 0;
       // border: 2px solid green; // temporarily omitted
       color: $grayish-violet;

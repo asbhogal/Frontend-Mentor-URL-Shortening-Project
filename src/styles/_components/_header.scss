@@ -19,6 +19,11 @@
     display: block;
     height: 30px;
   }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
   .hamburger-menu {
     // @include flex-column; // omitted to ensure this only shows on smaller-width devices (see responsive stylesheet)
     position: absolute;
@@ -44,12 +49,12 @@
 }
 
 .nav-list {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
+  // position: absolute; // omitted as changing styles due to secondary ul list move
+  // top: 60px; // omitted as changing styles due to secondary ul list move
+  // left: 50%; // omitted as changing styles due to secondary ul list move
+  // transform: translateX(-50%); // omitted as changing styles due to secondary ul list move
   border-radius: 10px;
-  width: 85%;
+  // width: 85%;
   padding: 0.5em 1em;
   font-size: 1.15rem;
   text-align: center;
