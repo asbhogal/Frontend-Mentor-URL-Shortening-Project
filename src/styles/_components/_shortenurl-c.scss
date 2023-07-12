@@ -18,7 +18,7 @@
   flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
   gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
   background-color: $dark-violet;
-  padding: 1.5em;
+  padding: 24px 36px; // amended to better reflect mockup
   max-width: 850px; // the maximum width of the container, keeping it fixed at viewports wider than 850px
   width: 100%; // ensures that viewport widths less than the 850px means the content fills the container properly
   //Thanks. I will look into Responsive design more to understand how to achieve this more consistently and understand the reasoning for my choices.
@@ -56,7 +56,7 @@
   .error {
     display: none;
     position: absolute;
-    bottom: 0;
+    bottom: 10px; // amended to better match mockup
     color: #e73030;
     font-style: italic; // added to match mockup
   }
@@ -90,8 +90,8 @@
   width: 90%;
   // added a width of 90% because I dont like the boxes touching on small screens.
   margin: 0.75em auto;
+  padding: 10px 20px; // amended to better reflect mockup
   border-radius: 5px; // changed to better reflect mockup
-  padding: 0.5em 0;
   text-align: center;
   .shortend-left-section {
     display: flex;

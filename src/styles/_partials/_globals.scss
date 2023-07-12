@@ -46,7 +46,7 @@ a {
 .input {
   color: $very-dark-blue;
   font-weight: 400;
-  margin: 0.5em;
+  // margin: 0.5em; // omitted to better reflect mockup - padding manually added to parent container
 }
 
 .url {
