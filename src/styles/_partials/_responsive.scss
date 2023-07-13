@@ -102,7 +102,7 @@
 
 @media screen and (min-width: 1000px) {
   .header-main {
-    @include flex-default;
+    // @include flex-default; // omitted due to duplicate properties (with main component stylesheet)
     gap: 30px;
     justify-content: space-between;
     position: relative;
