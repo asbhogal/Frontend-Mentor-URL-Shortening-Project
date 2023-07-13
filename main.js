@@ -174,12 +174,14 @@ function getHTMLTemplate(original, short) {
 			<a class="input">${original}</a>
           </div>
           <div class="shortend-right-section">
-			<a class="url">${short}</a>
+			<a class="url" href=${short}>${short}</a> 
 			<button class="btn copy-btn"> Copy </button>
           </div>
 		</div>
 			`;
 }
+
+// added href value to allow users to also click the generated shortened link
 
 /* 
 
