@@ -40,7 +40,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $grayish-violet;
+  color: $very-dark-blue; // changed to meet background/foreground contrast ratio accessibility
 }
 
 .input {
