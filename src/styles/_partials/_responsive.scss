@@ -2,6 +2,14 @@
 @use "./variables" as *;
 
 @media only screen and (min-width: 1000px) {
+  .nav-right-item {
+    // added to take the login and sign up buttons out of the flow of the header and push them to the right
+    position: absolute;
+    right: 0;
+  }
+  .nav-right-item-first {
+    padding-right: 150px; // pushes the login button further to the left to reflect mockup
+  }
   .inner-hero-container,
   .company-stats-blocks,
   .footer-box-container {
@@ -68,9 +76,9 @@
   .hamburger-menu {
     @include flex-column; // ensures this only appears on smaller devices
   }
-  .nav-list,
-  .nav-list-secondary {
+  .nav-list {
     display: flex;
+    // omitted nav-list-secondary class as has been removed from markup
     flex-direction: column;
     gap: 30px; // gap is very useful for adding spacing between items, and not outside them. This can be used with either flex or grid elements.
     // I must say, it was like a treasure hunt, finding the nav items. (:
@@ -85,14 +93,17 @@
       font-weight: 900;
       cursor: pointer;
       // Added cursor pointer, I think it looks nicer.
+      a {
+        color: $pale-violet; // added for links to take own separate color in mobile menu
+      }
     }
     .nav-sign-up-btn {
       display: inherit;
     }
-    .separator {
-      height: 1px;
-      background-color: $grayish-violet;
-    }
+  }
+  .separator {
+    height: 1px;
+    background-color: $grayish-violet;
   }
 
   .nav-list.hidden {
@@ -123,7 +134,10 @@
     // border: 4px solid navy; // temporarily omitted
     height: 150px; // added to match mockups
     .nav-list {
-      @include flex-default;
+      // @include flex-default; // omitted as space-between no longer used here
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       gap: 30px;
       // position: absolute; - omitted to match mockups - was out of vertical alignment
       // top: 0;

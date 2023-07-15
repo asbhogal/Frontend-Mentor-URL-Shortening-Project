@@ -26,29 +26,26 @@
           <span class="bar"></span>
         </div>
         <div class="nav-container">
-          <ul class="nav-list hidden">
-            <div class="nav-list-left">
-              <!--SECONDARY LIST HAS BEEN MERGED WITH MAIN LIST INTO THE ONE NAV-LIST CONTAINER, THEN DIVIDED INTO SEPARATE DIVS. THIS IS BECAUSE THE SECONDARY MENU IN IT'S OWN UL LIST OUTSIDE WAS CAUSING POSITIONING ISSUES IN RESPONSIVE WITH THE MOBILE MENU-->
-              <li class="nav-item"><a target="_blank" href="#">Features</a></li>
-              <li class="nav-item"><a target="_blank" href="#">Pricing</a></li>
-              <li class="nav-item">
+            <ul class="nav-list hidden">
+              <!--SECONDARY LIST HAS BEEN MERGED WITH MAIN LIST INTO THE ONE NAV-LIST CONTAINER, THEN DIVIDED INTO SEPARATE DIVS. THIS IS BECAUSE THE SECONDARY MENU IN IT'S OWN LIST WAS CAUSING POSITIONING ISSUES IN THE MOBILE RESPONSIVE MENU-->
+              <li class="nav-item left-item"><a target="_blank" href="#">Features</a></li>
+              <li class="nav-item left-item"><a target="_blank" href="#">Pricing</a></li>
+              <li class="nav-item left-item">
                 <a target="_blank" href="#">Resources</a>
               </li>
-            </div>
-            <div class="separator"></div>
-            <!-- added this separator for the mobile menu to match mockup - will only show then -->
-            <!-- According to MDN I can do this:  -->
-            <div class="nav-list-right">
-              <li class="nav-item-m">
+              <div class="separator"></div>
+              <li class="nav-item-m nav-right-item nav-right-item-first">
                 <!-- WAS MISSING a TAG HERE SO ADDED IN -->
                 <a target="_blank" href="#">Login</a>
               </li>
-              <li class="nav-item-m">
+              <li class="nav-item-m nav-right-item">
                 <a class="nav-sign-up-btn" href="#">Sign Up</a>
                 <!-- changed to reflect mockup better -->
               </li>
-            </div>
-          </ul>
+            </ul>
+          </div>
+          <!-- added this separator for the mobile menu to match mockup - will only show then -->
+          <!-- According to MDN I can do this:  -->
         </div>
       </header>
 
