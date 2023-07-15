@@ -34,7 +34,7 @@ body {
   color: $white;
   font-weight: 700;
   &:hover {
-    background-color: $pale-cyan; // added to better reflect mockup;
+    background-color: $very-dark-blue; // changed to meet background/foreground contrast ratio accessibility
   }
 }
 
