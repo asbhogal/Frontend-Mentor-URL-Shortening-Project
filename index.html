@@ -27,22 +27,27 @@
         </div>
         <div class="nav-container">
           <ul class="nav-list hidden">
-            <li class="nav-item"><a target="_blank" href="#">Features</a></li>
-            <li class="nav-item"><a target="_blank" href="#">Pricing</a></li>
-            <li class="nav-item"><a target="_blank" href="#">Resources</a></li>
+            <div class="nav-list-left">
+              <!--SECONDARY LIST HAS BEEN MERGED WITH MAIN LIST INTO THE ONE NAV-LIST CONTAINER, THEN DIVIDED INTO SEPARATE DIVS. THIS IS BECAUSE THE SECONDARY MENU IN IT'S OWN UL LIST OUTSIDE WAS CAUSING POSITIONING ISSUES IN RESPONSIVE WITH THE MOBILE MENU-->
+              <li class="nav-item"><a target="_blank" href="#">Features</a></li>
+              <li class="nav-item"><a target="_blank" href="#">Pricing</a></li>
+              <li class="nav-item">
+                <a target="_blank" href="#">Resources</a>
+              </li>
+            </div>
             <div class="separator"></div>
             <!-- added this separator for the mobile menu to match mockup - will only show then -->
             <!-- According to MDN I can do this:  -->
-          </ul>
-          <ul class="nav-list-secondary hidden nav-list">
-            <li class="nav-item-m">
-              <!-- WAS MISSING a TAG HERE SO ADDED IN -->
-              <a target="_blank" href="#">Login</a>
-            </li>
-            <li class="nav-item-m">
-              <a class="nav-sign-up-btn" href="#">Sign Up</a>
-              <!-- changed to reflect mockup better -->
-            </li>
+            <div class="nav-list-right">
+              <li class="nav-item-m">
+                <!-- WAS MISSING a TAG HERE SO ADDED IN -->
+                <a target="_blank" href="#">Login</a>
+              </li>
+              <li class="nav-item-m">
+                <a class="nav-sign-up-btn" href="#">Sign Up</a>
+                <!-- changed to reflect mockup better -->
+              </li>
+            </div>
           </ul>
         </div>
       </header>

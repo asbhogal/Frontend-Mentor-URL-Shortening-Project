@@ -23,6 +23,10 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    .nav-list-left,
+    .nav-list-right {
+      display: flex; // split the header links into left and right after merging them together in markup
+    }
   }
   .hamburger-menu {
     // @include flex-column; // omitted to ensure this only shows on smaller-width devices (see responsive stylesheet)
@@ -80,9 +84,9 @@
 	} */ // omitted - will be refactored in change to nav list styling (see below)
 }
 
-.nav-list-secondary {
+/* .nav-list-secondary { // omitted as no longer used in markup - see comment
   list-style-type: none;
-}
+} */
 
 .nav-sign-up-btn {
   // @include btn; // omitted as the padding value in this mixin was conflicting with the one independently set below
@@ -92,4 +96,8 @@
   border-radius: 50px;
   padding: 8px 25px; // changed to reflect mockup better
   color: $white;
+}
+
+ul.nav-list.hidden {
+  width: 100%; //added to stretch full width of parent container to allow space-between to take effect
 }
