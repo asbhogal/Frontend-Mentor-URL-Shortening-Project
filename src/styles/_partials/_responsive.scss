@@ -1,17 +1,15 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
-@media only screen and (max-width: 999px) {
-  .inner-hero-container {
-    flex-direction: column; // added to match mockup
-  }
-  .shortend-right-section {
-    flex-direction: column; // added to match mockup
-    gap: 5px;
-  }
-}
-
 @media only screen and (min-width: 1000px) {
+  .inner-hero-container,
+  .company-stats-blocks,
+  .footer-box-container {
+    padding: 0 20px; // added to avoid these containers from touching the edges of the viewport between 1087px and 1000px which are typically large/landscape tablet sizes
+  }
+  .logo {
+    padding-left: 20px; // added to avoid this from touching the edges of the viewport between 1087px and 1000px which are typically large/landscape tablet sizes
+  }
   .boost-links-container {
     background-image: url(/bg-boost-desktop.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
     //makes perfect sense, it was screaming at me, actually :) ty.
@@ -32,6 +30,7 @@
     height: 12ch;
     background-position: top center;
     // This is not correct. I have tried many combos, it all looks off, might be height causing an issue too. I tried.
+    // that's okay, I'm inclined to keep this as it is, I think it looks perfectly fine
     background-repeat: no-repeat;
     align-items: center;
   }
@@ -48,8 +47,23 @@
 // the following adds styling for the mobile menu to match the mockup better - a media query is used to ensure it only applies to the mobile menu, as the class name is the same
 @media only screen and (width <= 999px) {
   // this basically says "width is less than or equal to 999px", love these expressions
+  .inner-hero-container {
+    // moved this and the one below here from the @media query which was at the top (@media only screen and (max-width: 999px)
+    flex-direction: column; // added to match mockup
+  }
+  .shortend-right-section {
+    flex-direction: column; // added to match mockup
+    gap: 5px;
+  }
+  .footer-box-list .footer-box-link a {
+    color: inherit; // inherits the original value so doesn't take the color value set for the a links in the header
+  }
   .header-main {
     height: 95px; // added to match mockups
+    .logo {
+      position: relative; // added these to match mockup better and mirror the hamburger toggle. This avoids needing to restyle the header sections, while achieving a similar effect
+      left: 5%;
+    }
   }
   .hamburger-menu {
     @include flex-column; // ensures this only appears on smaller devices
