@@ -10,7 +10,6 @@ footer {
   color: $white;
   // gap: 20px; // omitted to better match mockup
   padding: 1em 0;
-
   .footer-box-container {
     @include flex-column;
     // gap: 20px; // omitted for media query-specific styling (ensures a larger gap for desktop isn't overridden by this value)
@@ -65,4 +64,9 @@ footer {
     gap: 10px; // added to better reflect mockup
     @include default-list-style;
   }
+}
+
+.footer-logo {
+  height: auto; // added as explicit width property required in Lighthouse
+  width: auto; // added as explicit width property required in Lighthouse
 }

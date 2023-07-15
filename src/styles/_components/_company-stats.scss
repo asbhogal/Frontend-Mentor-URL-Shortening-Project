@@ -17,7 +17,7 @@
       font-size: clamp(1rem, 0.7778rem + 1.1111vw, 1.75rem);
     }
     .company-stats-paragraph {
-      color: $grayish-violet;
+      color: $grayish-violet-accessible; // added to meet accessibility for background/foreground contrast ratios - darker accent of grayish-violet
       line-height: 1.5;
       margin-top: 1em;
       font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
@@ -59,7 +59,7 @@
     }
 
     p {
-      color: #74707b;
+      color: $grayish-violet-accessible; // added to meet accessibility for background/foreground contrast ratios - darker accent of grayish-violet
       line-height: 1.5;
       font-size: clamp(0.75rem, 0.6389rem + 0.5556vw, 1.125rem);
     }

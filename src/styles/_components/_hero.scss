@@ -28,7 +28,7 @@
       font-size: clamp(18px, 9.1104px + 2.7778vw, 48px);
     }
     .hero-text-paragraph {
-      color: $grayish-violet;
+      color: $grayish-violet-accessible; // added to meet accessibility for background/foreground contrast ratios - darker accent of grayish-violet
       // font-size: 18px;
       font-size: clamp(16px, 14.5776px + 0.4444vw, 20.8px);
       line-height: 1.5;
@@ -45,6 +45,8 @@
       display: block;
       margin: 1em auto;
       max-width: 100%;
+      height: auto; // added as explicit width property required in Lighthouse
+      width: auto; // added as explicit width property required in Lighthouse
     }
   }
 }

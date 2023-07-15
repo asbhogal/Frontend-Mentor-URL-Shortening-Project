@@ -18,6 +18,7 @@
   img {
     display: block;
     height: 30px;
+    width: auto; // added as explicit width property required in Lighthouse check
   }
   .nav-container {
     display: flex;
@@ -91,7 +92,7 @@
 .nav-sign-up-btn {
   // @include btn; // omitted as the padding value in this mixin was conflicting with the one independently set below
   text-decoration: none;
-  background-color: $cyan;
+  background-color: #2ac4c4; // changed to meet background/foreground contrast ratio accessibility
   cursor: pointer;
   border-radius: 50px;
   padding: 8px 25px; // changed to reflect mockup better
