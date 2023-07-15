@@ -68,7 +68,7 @@
 }
 
 .shortend-urls-container {
-  background-color: $pale-violet; // added to better reflect mockup
+  background-color: #d6d4de; // added to better reflect mockup
   padding-top: 6em; // changed to padding-top to account for the background-color addition
   font-weight: 100;
   // So the newest is the first in the list.
@@ -114,7 +114,7 @@
     }
   }
   .url {
-    color: $cyan;
+    color: #19383a;
     padding-top: 0.3em;
     border-top: 1px solid $gray;
     margin: 0.2em 0;

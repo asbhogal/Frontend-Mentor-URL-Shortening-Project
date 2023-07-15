@@ -5,7 +5,7 @@
   text-align: center;
   padding: 2em 0;
   background-color: #d6d4de;
-  // background-color: $gray;
+  // background-color: $gray; // omitted to better reflect mockup
   .company-stats-text {
     // width: 50%;
     margin: 0 auto 3.5em auto;
@@ -34,7 +34,7 @@
   width: 100%; // added to better match mockups
   margin: 0 auto;
   .seperator {
-    border: 5px solid $cyan;
+    border: 5px solid #19383a; // changed to meet background/foreground contrast ratio accessibility
     height: 90%;
     position: absolute;
   }
@@ -71,10 +71,8 @@
       display: block;
       margin: 0 auto;
       position: absolute;
-      top: -25px;
-      left: 50%;
       transform: translateX(-50%);
-    }
+    } // moved top and left values to respective section in responsive stylesheet (equal to or below 999px)
   }
 }
 

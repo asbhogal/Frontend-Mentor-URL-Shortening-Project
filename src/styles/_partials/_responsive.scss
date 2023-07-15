@@ -109,6 +109,11 @@
   .nav-list.hidden {
     display: none;
   }
+
+  .block-item-icon {
+    top: -28px;
+    left: 50%;
+  }
   .footer-logo {
     margin: 0 auto; // added to centralise after footer structure changes
   }
@@ -289,15 +294,15 @@
       display: block;
       margin: 0 auto;
       position: absolute;
-      top: -25px;
-      left: 10%;
+      top: -38px;
+      left: 15%;
       transform: translateX(-10%);
     }
   }
 
   .tree-border::before {
     content: "";
-    border-top: 6px solid $cyan;
+    border-top: 6px solid #19383a; // changed to meet background/foreground contrast ratio accessibility
     position: absolute;
     top: 50%;
     transform: translateX(-50deg);
