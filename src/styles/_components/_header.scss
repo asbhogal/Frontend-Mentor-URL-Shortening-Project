@@ -70,7 +70,7 @@
   font-family: $primary-font-family;
   .nav-item > a {
     &:hover {
-      color: $cyan;
+      color: $grayish-violet-accessible; // changed to keep now-accessible theme consistent
     }
   }
   .nav-item-m:first-child {

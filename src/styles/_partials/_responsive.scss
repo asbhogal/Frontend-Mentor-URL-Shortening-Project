@@ -338,7 +338,7 @@
           text-decoration: none;
           color: inherit;
           &:hover {
-            color: $cyan;
+            color: $grayish-violet-accessible; // changed to keep now-accessible theme consistent
           }
         }
       }
