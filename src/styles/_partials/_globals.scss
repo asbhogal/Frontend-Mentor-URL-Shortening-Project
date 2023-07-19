@@ -7,6 +7,10 @@
   font-family: $primary-font-family;
 } */
 
+html {
+  scroll-behavior: smooth; // added to make scrolling smoothy-smooth
+}
+
 * {
   margin: 0;
   padding: 0;
