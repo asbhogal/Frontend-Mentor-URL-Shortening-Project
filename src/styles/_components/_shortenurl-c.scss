@@ -15,7 +15,7 @@
   // Oh-----it worked. Keywords op. Math, who? Never really got along with her.
   display: flex;
   // border: 2px solid red; // omitted to match mockup
-  flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally
+  // flex-wrap: wrap; // responsive - wraps the content and stacks it vertically when there is no room left horizontally // omitted as was causing flow to change to vertical on desktop view - will add responsive to have it flow vertically using flex-direction - see media query for max-width: 999px
   gap: 20px; // adds a gap between the children of the container. needs a display of flex or grid for this to work
   background-color: $dark-violet;
   padding: 24px 36px; // amended to better reflect mockup
@@ -52,6 +52,12 @@
     @include flex-default;
     justify-content: center;
     font-family: $primary-font-family;
+    background-color: transparent; // added for improved design
+    border: 1px solid $gray; // added to accentuate button for UX
+    padding: 14px 20px; // added to match input box better
+    &:hover {
+      border: 1px solid $grayish-violet-accessible;
+    }
   }
   .error {
     display: none;

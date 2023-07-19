@@ -35,7 +35,7 @@
     margin-right: auto;
     //
     background-image: url(/bg-shorten-desktop.svg); // removed 'public' from pathfile - all static assets in Vite are served from the public root by default, so only need to reference file from public, where public = /, if that makes sense
-    height: 12ch;
+    // height: 12ch; // omitted as was causing button to be out-of-flow
     background-position: top center;
     // This is not correct. I have tried many combos, it all looks off, might be height causing an issue too. I tried.
     // that's okay, I'm inclined to keep this as it is, I think it looks perfectly fine
@@ -58,6 +58,13 @@
   .inner-hero-container {
     // moved this and the one below here from the @media query which was at the top (@media only screen and (max-width: 999px)
     flex-direction: column; // added to match mockup
+  }
+  .link-shorten-container {
+    // added the following styles to match mockup after changes to the link container and child component directions
+    flex-direction: column;
+    .link-input {
+      width: 100%;
+    }
   }
   .shortend-right-section {
     flex-direction: column; // added to match mockup
