@@ -60,7 +60,7 @@
   // transform: translateX(-50%); // omitted as changing styles due to secondary ul list move
   border-radius: 10px;
   // width: 85%;
-  padding: 0.5em 1em;
+  padding: 30px; // changed to better reflect mockup
   font-size: 1.15rem;
   text-align: center;
   @include default-list-style;
@@ -75,6 +75,10 @@
   }
   .nav-item-m:first-child {
     @extend .nav-item; // extends styling of .nav-item-m for just the first child (ie. the 'login' button, avoids styling the CTA button next to it)
+  }
+
+  .login-link:hover {
+    color: $grayish-violet-accessible; // added to match hover states of other links in header (minus CTA)
   }
   /* & > li,
   .nav-item-m {

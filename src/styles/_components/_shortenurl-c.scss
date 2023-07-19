@@ -56,7 +56,7 @@
     border: 1px solid $gray; // added to accentuate button for UX
     padding: 14px 20px; // added to match input box better
     &:hover {
-      border: 1px solid $grayish-violet-accessible;
+      border: 1px solid $grayish-violet-accessible; // added to keep consistent with new accessible theme
     }
   }
   .error {

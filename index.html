@@ -20,11 +20,11 @@
         <div class="logo">
           <img src="/logo.svg" alt="Shortly logo" />
         </div>
-        <div class="hamburger-menu">
+        <button class="hamburger-menu"> <!--CHANGED DIV TO BUTTON FOR ACCESSIBILITY-->
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </button>
         <div class="nav-container">
             <ul class="nav-list hidden">
               <!--SECONDARY LIST HAS BEEN MERGED WITH MAIN LIST INTO THE ONE NAV-LIST CONTAINER, THEN SPLIT WITH THE FIRST THREE TAKING NATURAL FLOW AND THE LAST TWO POSITIONED ABSOLUTELY (IN RESPONSIVE VIEW OF MIN-WIDTH: 1000px). THIS IS BECAUSE THE SECONDARY MENU IN IT'S OWN LIST (WITH THE CURRENT STYLING) WAS CAUSING POSITIONING ISSUES IN THE MOBILE RESPONSIVE MENU-->
@@ -36,7 +36,7 @@
               <div class="separator"></div>
               <li class="nav-item-m nav-right-item nav-right-item-first">
                 <!-- WAS MISSING a TAG HERE SO ADDED IN -->
-                <a target="_blank" href="#">Login</a>
+                <a class="login-link" target="_blank" href="#">Login</a> <!--ADDED CLASS TO THEN STYLE HOVER-->
               </li>
               <li class="nav-item-m nav-right-item">
                 <a class="nav-sign-up-btn" href="#">Sign Up</a>
