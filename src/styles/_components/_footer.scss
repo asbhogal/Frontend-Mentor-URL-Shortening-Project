@@ -25,6 +25,7 @@ footer {
 
   .footer-box-heading {
     // margin-bottom: 0.5em; // omitted as adding flex display and gap properties
+    line-height: 1; // added to align top of text with logo and social icons
     font-weight: 600;
     letter-spacing: -0.5px;
   }
